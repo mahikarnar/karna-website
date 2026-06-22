@@ -1,4 +1,4 @@
-# Karna Enterprises — Official Website
+# Karna Enterprises 
 
 Official website for **Karna Enterprises**, a Bangalore-based manufacturer and supplier of premium packaging materials since 2010.
 
@@ -14,15 +14,6 @@ Official website for **Karna Enterprises**, a Bangalore-based manufacturer and s
 | Forms | Formspree |
 | SEO | React Helmet Async |
 | Hosting | Hostinger |
-
----
-
-## Company Info
-
-**Karna Enterprises**
-Dinnepalya, CK Palya, Electronic City Road, Bangalore 560083
-Phone: +91 99015 06336
-Email: info@karnaenterprises.in
 
 ---
 
