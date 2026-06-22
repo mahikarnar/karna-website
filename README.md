@@ -2,7 +2,6 @@
 
 Official website for **Karna Enterprises**, a Bangalore-based manufacturer and supplier of premium packaging materials since 2010.
 
----
 
 ## Tech Stack
 
