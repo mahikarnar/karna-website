@@ -1,0 +1,230 @@
+/* PAGE HEADER */
+.page-header {
+  background-color: #1A1A2E;
+  padding: 72px 48px 80px;
+}
+
+.page-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #C41E3A;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.page-header h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.page-sub {
+  font-size: 16px;
+  color: #9CA3AF;
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* PRODUCTS SECTION */
+.products-section {
+  padding: 72px 0;
+  background-color: #FAF9F6;
+}
+
+.products-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.product-card:hover {
+  border-color: #C41E3A;
+  box-shadow: 0 8px 28px rgba(196, 30, 58, 0.09);
+  transform: translateY(-2px);
+}
+
+.product-card-top {
+  margin-bottom: 20px;
+}
+
+.product-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background-color: #FEF2F4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C41E3A;
+  margin-bottom: 16px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A2E;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.product-tag {
+  background-color: #F4F4F5;
+  color: #52525B;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.product-enquire-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  width: fit-content;
+}
+
+.product-enquire-btn:hover {
+  opacity: 0.85;
+}
+
+/* CUSTOM BAND */
+.custom-band {
+  background-color: #1A1A2E;
+  padding: 72px 48px;
+}
+
+.custom-band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.custom-band-text h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.custom-band-text p {
+  font-size: 14px;
+  color: #9CA3AF;
+  line-height: 1.75;
+  max-width: 480px;
+}
+
+.custom-band-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btn-whatsapp-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 13px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.btn-whatsapp-lg:hover {
+  opacity: 0.88;
+}
+
+.btn-call-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  color: #FFFFFF;
+  padding: 13px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  transition: border-color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-call-lg:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .custom-band-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .page-header { padding: 56px 24px 64px; }
+  .page-header h1 { font-size: 32px; }
+  .products-inner { padding: 0 24px; }
+  .products-section { padding: 48px 0; }
+  .products-grid { grid-template-columns: 1fr; }
+  .custom-band { padding: 48px 24px; }
+  .custom-band-actions { width: 100%; }
+  .btn-whatsapp-lg, .btn-call-lg { justify-content: center; }
+}
