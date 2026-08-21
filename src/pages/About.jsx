@@ -7,7 +7,7 @@ const milestones = [
   { year: '2010', title: 'Founded', desc: 'Karna Enterprises was incorporated in Bangalore with the objective of providing best-quality packaging materials to local industries.' },
   { year: '2012', title: 'First 100 Clients', desc: 'Within two years, we built a loyal base of 100+ clients across manufacturing and food processing sectors.' },
   { year: '2015', title: 'Expanded Product Range', desc: 'Added EPE foam fitments, corrugated boxes, and custom printed tapes to serve a wider range of industries.' },
-  { year: '2018', title: 'Crossed 1,000 Orders', desc: 'A major milestone — over 1,000 completed orders with zero compromise on quality or delivery timelines.' },
+  { year: '2018', title: 'Crossed 1,000 Orders', desc: 'A major milestone over 1,000 completed orders with zero compromise on quality or delivery timelines.' },
   { year: '2024', title: 'Today', desc: '2,342+ clients, 6,302+ orders completed, and still growing. Trusted by brands like Fanuc, Mother Dairy, and Sandvik Asia.' },
 ]
 
@@ -37,10 +37,10 @@ function About() {
           <div className="story-grid">
             <div className="story-text">
               <p className="section-label">Who we are</p>
-              <h2>14 years of packaging expertise, built in Bangalore</h2>
+              <h2>16 years of packaging expertise, built in Bangalore</h2>
               <p>
                 Karna Enterprises was incorporated in the year 2010 in Bangalore, with a clear
-                objective — to provide the best quality packaging materials to industries across
+                objective to provide the best quality packaging materials to industries across
                 the region. From day one, we set the benchmark of quality in this sphere of business.
               </p>
               <p>
@@ -64,7 +64,7 @@ function About() {
                   <span className="story-stat-label">Orders completed</span>
                 </div>
                 <div className="story-stat">
-                  <span className="story-stat-num">14+</span>
+                  <span className="story-stat-num">16+</span>
                   <span className="story-stat-label">Years in business</span>
                 </div>
               </div>
@@ -94,7 +94,7 @@ function About() {
                 </div>
                 <div className="info-row">
                   <span className="info-label">Hours</span>
-                  <span className="info-value">Mon – Fri, 10:00 – 18:00</span>
+                  <span className="info-value">Mon to Fri, 10:00 – 18:00</span>
                 </div>
                 <div className="info-row">
                   <span className="info-label">Specialisation</span>
@@ -113,21 +113,33 @@ function About() {
           <h2 className="section-title">Meet our Director</h2>
           <div className="director-grid">
             <div className="director-photo-wrap">
-              {/* ADD DIRECTOR PHOTO HERE */}
-              {/* Replace the div below with: <img src="/images/rajeev-karna.jpg" alt="Rajeev Kumar Karna" className="director-photo" /> */}
-              <div className="director-photo-placeholder">
-                <span>Photo of<br />Rajeev Kumar Karna</span>
-              </div>
+              <img
+                src="/images/director.jpeg"
+                alt="Rajeev Kumar Karna"
+                className="director-photo"
+              />
             </div>
             <div className="director-text">
               <h3>Rajeev Kumar Karna</h3>
               <p className="director-title">Founder and Director, Karna Enterprises</p>
-              {/* ADD DIRECTOR BIO HERE — a few lines about his background, experience, and vision */}
-              {/* Example structure below, replace with actual content: */}
-              <p className="director-bio director-bio-placeholder">
-                [ Add a short biography of Rajeev Kumar Karna here — his background,
-                what inspired him to start Karna Enterprises in 2010, his experience
-                in the packaging industry, and his vision for the company. ]
+              <p className="director-bio">
+                Rajeev Kumar Karna founded Karna Enterprises in 2010 with a simple yet powerful
+                vision, which was to provide industries with packaging solutions that combine uncompromising
+                quality, reliability, and value. Believing that every successful business deserves
+                a trusted packaging partner, he built the company on the principles of integrity,
+                customer satisfaction, and continuous improvement.
+              </p>
+              <p className="director-bio">
+                His hands-on approach, commitment to excellence, and focus on building lasting
+                customer relationships have been the driving forces behind the company's steady
+                growth and reputation for dependable service.
+              </p>
+
+              <p className="director-bio">
+                Today, his vision continues to inspire the organisation to innovate, deliver
+                world-class packaging solutions, and become a globally recognised name while
+                staying true to the values of quality, trust, and customer-first service that
+                have defined Karna Enterprises since its inception.
               </p>
             </div>
           </div>
@@ -145,7 +157,7 @@ function About() {
               <p>
                 Our vision is to become a globally recognised packaging conglomerate. We are
                 progressing ahead with the vision to cater to a broad spectrum of industries
-                with products of the highest excellence — driven by profound knowledge,
+                with products of the highest excellence, driven by profound knowledge,
                 deep experience, and an unwavering pursuit of quality.
               </p>
             </div>
@@ -155,7 +167,7 @@ function About() {
               <h2>Expertise, reliability, and commitment</h2>
               <p>
                 Our customers choose us for our expertise, reliability, customer support, and
-                commitment — and we are proud to be their first choice. Our products have
+                commitment and we are proud to be their first choice. Our products have
                 enormous demand across industries and deliver service for a durable period of time.
                 This has placed us as a trusted, reliable supplier among our clients.
               </p>
@@ -183,7 +195,7 @@ function About() {
               </p>
               <p>
                 We maintain strict quality checks for each product we manufacture. Our dedicated
-                customer care approach allows us to guarantee complete satisfaction — in terms of
+                customer care approach allows us to guarantee complete satisfaction in terms of
                 durability, quality standards, and efficient performance over a long period of time.
               </p>
             </div>

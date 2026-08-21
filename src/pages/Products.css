@@ -70,19 +70,30 @@
 }
 
 .product-card-top {
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
-.product-icon-wrap {
-  width: 44px;
-  height: 44px;
-  background-color: #FEF2F4;
+.product-image-wrap {
+  width: 100%;
+  height: 180px;
   border-radius: 10px;
+  overflow: hidden;
+  background-color: #F9F9F9;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #C41E3A;
-  margin-bottom: 16px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.04);
 }
 
 .product-card h3 {
@@ -114,6 +125,13 @@
   border-radius: 20px;
 }
 
+/* bottom row: tags + enquire button */
+.product-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .product-enquire-btn {
   display: inline-flex;
   align-items: center;
@@ -127,6 +145,7 @@
   font-weight: 600;
   transition: opacity 0.2s;
   width: fit-content;
+  flex-shrink: 0;
 }
 
 .product-enquire-btn:hover {
@@ -227,4 +246,15 @@
   .custom-band { padding: 48px 24px; }
   .custom-band-actions { width: 100%; }
   .btn-whatsapp-lg, .btn-call-lg { justify-content: center; }
+
+  .product-card-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .product-tags {
+    flex: 1;
+  }
 }

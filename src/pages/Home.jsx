@@ -1,11 +1,21 @@
-import { Phone, MessageCircle, Factory, Settings, Clock, ShieldCheck, IndianRupee, Handshake, ArrowRight, Box, Package, Layers, Truck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import {
+  ArrowRight,
+  Clock,
+  Factory,
+  Handshake,
+  IndianRupee,
+  MessageCircle,
+  Phone,
+  Settings,
+  ShieldCheck,
+} from 'lucide-react'
 import './Home.css'
 
 const whyCards = [
-  { icon: Factory, title: 'Direct Manufacturer', desc: 'No middlemen. We make it, we sell it — better prices and consistent quality every order.' },
-  { icon: Settings, title: 'Custom Solutions', desc: 'Printed tapes, custom sizes, branded packaging — tailored to your exact specifications.' },
+  { icon: Factory, title: 'Direct Manufacturer', desc: 'No middlemen. We make it, we sell it, better prices and consistent quality every order.' },
+  { icon: Settings, title: 'Custom Solutions', desc: 'Printed tapes, custom sizes, branded packaging, tailored to your exact specifications.' },
   { icon: Clock, title: 'On-Time Delivery', desc: 'Quick turnaround so your production line never stops. We take deadlines seriously.' },
   { icon: ShieldCheck, title: 'Quality Guaranteed', desc: 'Every product passes strict quality checks before it leaves our facility.' },
   { icon: IndianRupee, title: 'Competitive Pricing', desc: 'Bulk pricing for businesses of all sizes. Free quote within 24 hours.' },
@@ -13,10 +23,10 @@ const whyCards = [
 ]
 
 const products = [
-  { icon: Box, name: 'Thermocol Boxes', desc: 'Custom sizes for fragile product protection' },
-  { icon: Layers, name: 'BOPP Tapes', desc: 'Plain & printed, bulk rolls available' },
-  { icon: Package, name: 'Air Bubble Pouches', desc: 'For fragile goods, electronics & glassware' },
-  { icon: Truck, name: 'EPE Foam Fitments', desc: 'Precision cut inserts for any product shape' },
+  { img: '/images/products/ThermocolBox.png', name: 'Thermocol Boxes', desc: 'Custom sizes for fragile product protection' },
+  { img: '/images/products/BOPPplain.png', name: 'BOPP Tapes', desc: 'Plain & printed, bulk rolls available' },
+  { img: '/images/products/AirBubblePouch.png', name: 'Air Bubble Pouches', desc: 'For fragile goods, electronics & glassware' },
+  { img: '/images/products/EPEfoamFitments.png', name: 'EPE Foam Fitments', desc: 'Precision cut inserts for any product shape' },
 ]
 
 const clients = [
@@ -31,7 +41,7 @@ function Home() {
     <div className="home">
 
       <Helmet>
-        <title>Karna Enterprises | Packaging Materials Manufacturer in Bangalore, since 2010 </title>
+        <title>Karna Enterprises | Durapack Adhesive Tape </title>
         <meta name="description" content="Karna Enterprises is a Bangalore-based manufacturer and supplier of BOPP tapes, thermocol boxes, EPE foam, air bubble pouches, corrugated boxes and custom packaging solutions since 2010." />
         <meta name="keywords" content="packaging materials Bangalore, BOPP tapes, thermocol boxes, EPE foam, corrugated boxes, air bubble pouches, packaging manufacturer Bangalore" />
         <link rel="canonical" href="https://www.karnaenterprises.in/" />
@@ -82,7 +92,7 @@ function Home() {
           <span className="stat-label">Satisfaction Rate</span>
         </div>
         <div className="stat-item">
-          <span className="stat-num">14+</span>
+          <span className="stat-num">16+</span>
           <span className="stat-label">Years of Service</span>
         </div>
       </section>
@@ -118,9 +128,10 @@ function Home() {
             food, pharma, apparel and more.
           </p>
           <div className="product-grid">
-            {products.map(({ icon: Icon, name, desc }) => (
+            {products.map(({ img, name, desc }) => (
               <div className="product-card" key={name}>
-                <div className="product-thumb"><Icon size={28} /></div>
+                <div className="product-thumb">
+                  <img src={img} alt={name} className="product-thumb-img"/></div>
                 <h4>{name}</h4>
                 <p>{desc}</p>
                 <a
@@ -129,7 +140,7 @@ function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle size={13} /> Enquire on WhatsApp
+                  <MessageCircle size={13} /> Enquire Now
                 </a>
               </div>
             ))}
@@ -148,7 +159,7 @@ function Home() {
             Trusted by industry leaders across India
           </h2>
           <p className="section-sub" style={{ color: '#9CA3AF' }}>
-            From automotive to food and beverage to apparel — these brands trust us with their packaging.
+            From automotive to food and beverage to apparel, these brands trust us with their packaging.
           </p>
           <div className="clients-grid">
             {clients.map(name => (

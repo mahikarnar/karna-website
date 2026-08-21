@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
 import { useForm, ValidationError } from '@formspree/react'
 import { Helmet } from 'react-helmet-async'
+import ContactIllustration from '../assets/illustrations/contact-illustration.svg';
 import './Contact.css'
 
 function ContactForm() {
@@ -110,12 +111,36 @@ function Contact() {
             {/* PAGE HEADER */}
             <section className="page-header">
                 <div className="page-header-inner">
-                    <p className="page-label">Get in touch</p>
-                    <h1>Contact Us</h1>
-                    <p className="page-sub">
-                        Have a packaging requirement? We respond within 24 hours.
-                        Call, WhatsApp, or fill in the form below.
-                    </p>
+
+                    {/* Left Side */}
+                    <div className="page-header-content">
+
+                        <p className="page-label">
+                            Get in touch
+                        </p>
+
+                        <h1>
+                            Contact Us
+                        </h1>
+
+                        <p className="page-sub">
+                            Have a packaging requirement? We respond within 24 hours.
+                            Call, WhatsApp, or fill in the form below.
+                        </p>
+
+                    </div>
+
+                    {/* Right Side Illustration */}
+
+                    <div className="page-header-illustration">
+
+                        <img
+                            src={ContactIllustration}
+                            alt="Contact illustration"
+                        />
+
+                    </div>
+
                 </div>
             </section>
 
@@ -134,7 +159,7 @@ function Contact() {
                                     <a href="tel:+919901506336" className="contact-card-value">
                                         +91 99015 06336
                                     </a>
-                                    <p className="contact-card-note">Mon – Fri, 10:00 – 18:00</p>
+                                    <p className="contact-card-note">Mon to Fri, 10:00 AM – 6:00 PM IST</p>
                                 </div>
                             </div>
 

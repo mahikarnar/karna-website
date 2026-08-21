@@ -42,7 +42,7 @@
 
 .footer-logo-wrap-dura {
   background-color: #FFFFFF;
-  border-radius: 500px;
+  border-radius: 10000px;
   padding: 5px 2px;
   display: flex;
   align-items: center;
@@ -51,7 +51,7 @@
 }
 
 .footer-logo-img-dura {
-  height: 31px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -66,7 +66,8 @@
 
 .footer-gst {
   font-size: 12px;
-  color: #6B7280;
+  font-weight: 500;
+  color: #9da1a8;
   margin-bottom: 20px;
   font-family: 'Inter', sans-serif;
 }
@@ -87,7 +88,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9CA3AF;
+  color: #e3e4e6;
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
@@ -183,12 +184,12 @@
 .footer-wa-btn {
   display: inline-block;
   background-color: #25D366;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   padding: 9px 18px;
   border-radius: 7px;
   font-size: 13px;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: opacity 0.2s;
 }
 
@@ -213,6 +214,16 @@
   color: #374151;
 }
 
+.footer-bottom-left,
+.footer-bottom-right {
+  display: flex;
+  gap: 4px;
+}
+
+/* Desktop: both sides in a row */
+.footer-bottom-left { flex-direction: row; gap: 4px; }
+.footer-bottom-right { flex-direction: row; gap: 4px; }
+
 /* MOBILE */
 @media (max-width: 1024px) {
   .footer-container {
@@ -223,14 +234,71 @@
 
 @media (max-width: 600px) {
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     padding: 40px 24px 32px;
-    gap: 32px;
+    gap: 28px;
   }
-  .footer-bottom {
+
+  /* Brand col spans full width */
+  .footer-brand-col {
+    grid-column: 1 / -1;
+  }
+
+  /* Logos and socials on the same row */
+  .footer-logos-socials-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  /* Business Hours spans full width — text group left, button right */
+  .footer-col:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .footer-hours-group {
+    display: flex;
     flex-direction: column;
+  }
+
+  .footer-hours-group h4 {
+    margin-bottom: 18px;
+  }
+
+  .footer-col:last-child .footer-wa-btn {
+    flex-shrink: 0;
+  }
+
+  /* Bottom bar — two columns, two lines each */
+  .footer-bottom {
+    flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 16px 24px;
-    gap: 4px;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .footer-bottom-left,
+  .footer-bottom-right {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .footer-bottom-right {
+    text-align: right;
   }
 }

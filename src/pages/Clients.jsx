@@ -7,34 +7,34 @@ const featuredClients = [
   {
     name: 'Alleima India',
     description: 'Precision materials and special alloys manufacturer',
-    // logo: '/images/clients/alleima.png',
+    logo: '/images/clients/alleimaLogo.png',
   },
   {
-    name: 'Allied',
+    name: 'Allied Solutions Pvt Ltd',
     description: 'Industrial products and solutions provider',
-    // logo: '/images/clients/allied.png',
+    logo: '/images/clients/alliedLogo.png',
   },
   {
     name: 'Printo Document Services Pvt Ltd',
-    description: 'India\'s leading chain of print and design stores',
-    // logo: '/images/clients/printo.png',
+    description: "India's leading chain of print and design stores",
+    logo: '/images/clients/printoLogo.png',
   },
   {
-    name: 'Purflux',
+    name: 'Purflux Engine Systems Pvt Ltd',
     description: 'Automotive filtration systems manufacturer',
-    // logo: '/images/clients/purflux.png',
+    logo: '/images/clients/purfluxLogo.jpg',
   },
   {
     name: 'Soch Apparels Pvt Ltd',
     description: 'Leading Indian fashion and lifestyle retail brand',
-    // logo: '/images/clients/soch.png',
+    logo: '/images/clients/sochLogo.jpg',
   },
 ]
 
 const allClients = [
   'Adharsha Packaging Pvt Ltd',
   'Ags Fourwinds India Pvt Ltd',
-  'Arthur\'s Food Company Pvt Ltd',
+  "Arthur's Food Company Pvt Ltd",
   'Fanuc India Pvt Ltd',
   'Impress Apparel Machines Pvt Ltd',
   'IQF Foods Pvt Ltd',
@@ -54,16 +54,20 @@ function Clients() {
     <div className="clients-page">
       <Helmet>
         <title>Our Clients | Karna Enterprises Bangalore</title>
-        <meta name="description" content="Karna Enterprises supplies packaging materials to 2,342+ businesses including Fanuc India, Mother Dairy, Sandvik Asia, Soch Apparels and more." />
+        <meta
+          name="description"
+          content="Karna Enterprises supplies packaging materials to 2,342+ businesses including Fanuc India, Mother Dairy, Sandvik Asia, Soch Apparels and more."
+        />
         <link rel="canonical" href="https://www.karnaenterprises.in/clients" />
       </Helmet>
+
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="page-header-inner">
           <p className="page-label">Who trusts us</p>
           <h1>Our Clients</h1>
           <p className="page-sub">
-            From automotive to food and beverage to apparel — over 2,300 businesses
+            From automotive to food and beverage to apparel over 2,300 businesses
             across India trust Karna Enterprises for their packaging needs.
           </p>
         </div>
@@ -80,7 +84,7 @@ function Clients() {
           <span className="clients-stat-label">Orders completed</span>
         </div>
         <div className="clients-stat">
-          <span className="clients-stat-num">14+</span>
+          <span className="clients-stat-num">16+</span>
           <span className="clients-stat-label">Years of trust</span>
         </div>
         <div className="clients-stat">
@@ -98,21 +102,18 @@ function Clients() {
             These industry leaders rely on us for consistent quality, timely delivery,
             and packaging solutions tailored to their needs.
           </p>
+
           <div className="featured-grid">
             {featuredClients.map(({ name, description, logo }) => (
               <div className="featured-card" key={name}>
                 <div className="featured-logo-wrap">
-                  {logo
-                    ? <img src={logo} alt={`${name} logo`} className="featured-logo-img" />
-                    : (
-                      <div className="featured-logo-placeholder">
-                        {/* REPLACE THIS DIV WITH YOUR LOGO IMAGE */}
-                        {/* <img src="/images/clients/filename.png" alt={name} className="featured-logo-img" /> */}
-                        <span className="placeholder-text">Logo</span>
-                      </div>
-                    )
-                  }
+                  <img
+                    src={logo}
+                    alt={`${name} logo`}
+                    className="featured-logo-img"
+                  />
                 </div>
+
                 <h3>{name}</h3>
                 <p>{description}</p>
               </div>
@@ -130,9 +131,12 @@ function Clients() {
             A growing network of businesses across industries that trust us
             with their packaging requirements.
           </p>
+
           <div className="all-clients-grid">
             {allClients.map(name => (
-              <div className="client-name-chip" key={name}>{name}</div>
+              <div className="client-name-chip" key={name}>
+                {name}
+              </div>
             ))}
           </div>
         </div>
@@ -145,10 +149,12 @@ function Clients() {
             <h2>Join our growing client network</h2>
             <p>Get a free quote and experience the Karna Enterprises difference.</p>
           </div>
+
           <div className="clients-cta-btns">
             <Link to="/contact" className="btn-white">
               Request Free Quote <ArrowRight size={14} />
             </Link>
+
             <a
               href="https://wa.me/919901506336?text=Hi, I would like to enquire about your packaging products"
               className="btn-wa-outline"
@@ -160,7 +166,6 @@ function Clients() {
           </div>
         </div>
       </section>
-
     </div>
   )
 }

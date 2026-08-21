@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Mail } from 'lucide-react'
 import './Navbar.css'
 
 function Navbar() {
@@ -36,8 +36,14 @@ function Navbar() {
           <li><Link to="/clients" onClick={() => setMenuOpen(false)}>Clients</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           <li>
-            <a href="tel:+919901506336" className="nav-cta" onClick={() => setMenuOpen(false)}>
-              <Phone size={14} /> +91 99015 06336
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@karnaenterprises.in"
+              className="nav-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              <Mail size={16} /> Mail Us
             </a>
           </li>
         </ul>
