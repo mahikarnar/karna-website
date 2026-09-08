@@ -133,7 +133,7 @@ function About() {
               <div className="vision-block">
                 <div className="vision-icon-wrap"><Eye size={22} /></div>
                 <p className="section-label">Our Vision</p>
-                <h2>A globally recognised packaging conglomerate</h2>
+                <h2>Globally recognised packaging conglomerate</h2>
                 <p>Our vision is to become a globally recognised packaging conglomerate. We are progressing ahead with the vision to cater to a broad spectrum of industries with products of the highest excellence, driven by profound knowledge, deep experience, and an unwavering pursuit of quality.</p>
               </div>
             </Reveal>
@@ -142,7 +142,7 @@ function About() {
                 <div className="vision-icon-wrap"><Users size={22} /></div>
                 <p className="section-label">Why Clients Choose Us</p>
                 <h2>Expertise, reliability, and commitment</h2>
-                <p>Our customers choose us for our expertise, reliability, customer support, and commitment and we are proud to be their first choice. Our products have enormous demand across industries and deliver service for a durable period of time. This has placed us as a trusted, reliable supplier among our clients.</p>
+                <p>Our customers choose us for our expertise, reliability, customer support, and commitment, and we are proud to be their first choice. Our products have enormous demand across industries and deliver dependable performance for a durable period of time. With a strong focus on quality and consistent service, we continue to build lasting relationships and meet the evolving needs of our customers.</p>
               </div>
             </Reveal>
           </div>

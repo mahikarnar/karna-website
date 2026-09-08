@@ -6,19 +6,14 @@ import './Clients.css'
 
 const featuredClients = [
   {
-    name: 'Alleima India',
-    description: 'Precision materials and special alloys manufacturer',
-    logo: '/images/clients/alleimaLogo.png',
-  },
-  {
     name: 'Mother Dairy Fruit & Vegetables Pvt Ltd',
     description: 'Leading dairy and food products company',
     logo: '/images/clients/motherDairy.png',
   },
   {
-    name: 'Printo Document Services Pvt Ltd',
-    description: "India's leading chain of print and design stores",
-    logo: '/images/clients/printoLogo.png',
+    name: 'Alleima India',
+    description: 'Precision materials and special alloys manufacturer',
+    logo: '/images/clients/alleimaLogo.png',
   },
   {
     name: 'Fanuc India Pvt Ltd',
@@ -30,6 +25,11 @@ const featuredClients = [
     description: 'Leading Indian fashion and lifestyle retail brand',
     logo: '/images/clients/sochLogo.jpg',
   },
+    {
+    name: 'Printo Document Services Pvt Ltd',
+    description: "India's leading chain of print and design stores",
+    logo: '/images/clients/printoLogo.png',
+  }
 ]
 
 const allClients = [ 

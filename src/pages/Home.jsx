@@ -25,7 +25,7 @@ const whyCards = [
 
 const products = [
   { img: '/images/products/ThermocolBox.png', name: 'Thermocol Boxes', desc: 'Custom sizes for fragile product protection' },
-  { img: '/images/products/BOPPplain.png', name: 'BOPP Tapes', desc: 'Plain & printed, bulk rolls available' },
+  { img: '/images/products/BOPPplain.png', name: 'BOPP Tapes', desc: 'Plain & printed - with reliable adhesion, bulk rolls available.' },
   { img: '/images/products/AirBubblePouch.png', name: 'Air Bubble Pouches', desc: 'For fragile goods, electronics & glassware' },
   { img: '/images/products/EPEfoamFitments.png', name: 'EPE Foam Fitments', desc: 'Precision cut inserts for any product shape' },
 ]
