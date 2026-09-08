@@ -40,7 +40,6 @@ Official website for **Karna Enterprises**, a Bangalore-based manufacturer and s
 | Icons | Lucide React |
 | Forms | Formspree |
 | SEO | React Helmet Async |
-| Fonts | Google Fonts |
 | Hosting | Hostinger (Apache + `.htaccess` SPA routing) |
 
 ---
