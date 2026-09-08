@@ -1,6 +1,7 @@
 import { Eye, Users, ShieldCheck, Handshake, ArrowRight, MessageCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import Reveal from '../components/Reveal'
 import './About.css'
 
 const milestones = [
@@ -22,19 +23,21 @@ function About() {
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="page-header-inner">
-          <p className="page-label">Our story</p>
-          <h1>About Karna Enterprises</h1>
-          <p className="page-sub">
-            A Bangalore-based manufacturer and supplier of premium packaging materials,
-            serving industries across India since 2010.
-          </p>
+          <Reveal>
+            <p className="page-label">Our story</p>
+            <h1>About Karna Enterprises</h1>
+            <p className="page-sub">
+              A Bangalore-based manufacturer and supplier of premium packaging materials,
+              serving industries across India since 2010.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       {/* WHO WE ARE */}
       <section className="about-story">
         <div className="about-inner">
-          <div className="story-grid">
+          <Reveal className="story-grid">
             <div className="story-text">
               <p className="section-label">Who we are</p>
               <h2>16 years of packaging expertise, built in Bangalore</h2>
@@ -72,52 +75,29 @@ function About() {
             <div className="story-aside">
               <div className="story-info-card">
                 <h3>Company Information</h3>
-                <div className="info-row">
-                  <span className="info-label">Founded</span>
-                  <span className="info-value">2010</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-label">Location</span>
-                  <span className="info-value">Bangalore, Karnataka</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-label">Address</span>
-                  <span className="info-value">Dinnepalya, CK Palya, Electronic City Road, Bangalore 560083</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-label">Phone</span>
-                  <span className="info-value">+91 99015 06336</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-label">Email</span>
-                  <span className="info-value">info@karnaenterprises.in</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-label">Hours</span>
-                  <span className="info-value">Mon to Fri, 10:00 – 18:00</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-label">Specialisation</span>
-                  <span className="info-value">Packaging materials manufacturing and supply</span>
-                </div>
+                <div className="info-row"><span className="info-label">Founded</span><span className="info-value">2010</span></div>
+                <div className="info-row"><span className="info-label">Location</span><span className="info-value">Bangalore, Karnataka</span></div>
+                <div className="info-row"><span className="info-label">Address</span><span className="info-value">Dinnepalya, CK Palya, Electronic City Road, Bangalore 560083</span></div>
+                <div className="info-row"><span className="info-label">Phone</span><span className="info-value">+91 99015 06336</span></div>
+                <div className="info-row"><span className="info-label">Email</span><span className="info-value">info@karnaenterprises.in</span></div>
+                <div className="info-row"><span className="info-label">Hours</span><span className="info-value">Mon to Fri, 10:00 – 18:00</span></div>
+                <div className="info-row"><span className="info-label">Specialisation</span><span className="info-value">Packaging materials manufacturing and supply</span></div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* DIRECTOR */}
       <section className="about-director">
         <div className="about-inner">
-          <p className="section-label">Leadership</p>
-          <h2 className="section-title">Meet our Director</h2>
-          <div className="director-grid">
+          <Reveal>
+            <p className="section-label">Leadership</p>
+            <h2 className="section-title">Meet our Director</h2>
+          </Reveal>
+          <Reveal className="director-grid" delay={100}>
             <div className="director-photo-wrap">
-              <img
-                src="/images/director.jpeg"
-                alt="Rajeev Kumar Karna"
-                className="director-photo"
-              />
+              <img src="/images/director.jpeg" alt="Rajeev Kumar Karna" className="director-photo" />
             </div>
             <div className="director-text">
               <h3>Rajeev Kumar Karna</h3>
@@ -134,7 +114,6 @@ function About() {
                 customer relationships have been the driving forces behind the company's steady
                 growth and reputation for dependable service.
               </p>
-
               <p className="director-bio">
                 Today, his vision continues to inspire the organisation to innovate, deliver
                 world-class packaging solutions, and become a globally recognised name while
@@ -142,7 +121,7 @@ function About() {
                 have defined Karna Enterprises since its inception.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -150,28 +129,22 @@ function About() {
       <section className="about-vision">
         <div className="about-inner">
           <div className="vision-grid">
-            <div className="vision-block">
-              <div className="vision-icon-wrap"><Eye size={22} /></div>
-              <p className="section-label">Our Vision</p>
-              <h2>A globally recognised packaging conglomerate</h2>
-              <p>
-                Our vision is to become a globally recognised packaging conglomerate. We are
-                progressing ahead with the vision to cater to a broad spectrum of industries
-                with products of the highest excellence, driven by profound knowledge,
-                deep experience, and an unwavering pursuit of quality.
-              </p>
-            </div>
-            <div className="vision-block">
-              <div className="vision-icon-wrap"><Users size={22} /></div>
-              <p className="section-label">Why Clients Choose Us</p>
-              <h2>Expertise, reliability, and commitment</h2>
-              <p>
-                Our customers choose us for our expertise, reliability, customer support, and
-                commitment and we are proud to be their first choice. Our products have
-                enormous demand across industries and deliver service for a durable period of time.
-                This has placed us as a trusted, reliable supplier among our clients.
-              </p>
-            </div>
+            <Reveal delay={0}>
+              <div className="vision-block">
+                <div className="vision-icon-wrap"><Eye size={22} /></div>
+                <p className="section-label">Our Vision</p>
+                <h2>A globally recognised packaging conglomerate</h2>
+                <p>Our vision is to become a globally recognised packaging conglomerate. We are progressing ahead with the vision to cater to a broad spectrum of industries with products of the highest excellence, driven by profound knowledge, deep experience, and an unwavering pursuit of quality.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="vision-block">
+                <div className="vision-icon-wrap"><Users size={22} /></div>
+                <p className="section-label">Why Clients Choose Us</p>
+                <h2>Expertise, reliability, and commitment</h2>
+                <p>Our customers choose us for our expertise, reliability, customer support, and commitment and we are proud to be their first choice. Our products have enormous demand across industries and deliver service for a durable period of time. This has placed us as a trusted, reliable supplier among our clients.</p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -179,7 +152,7 @@ function About() {
       {/* QUALITY POLICY */}
       <section className="about-quality">
         <div className="about-inner">
-          <div className="quality-inner">
+          <Reveal className="quality-inner">
             <div className="quality-header">
               <div className="vision-icon-wrap"><ShieldCheck size={22} /></div>
               <div>
@@ -188,66 +161,55 @@ function About() {
               </div>
             </div>
             <div className="quality-grid">
-              <p>
-                Karna Enterprises guarantees absolute quality of service. We manufacture all
-                our products with precision and clarity in design, keeping in mind the quality
-                standards applicable to adhesive and packaging materials.
-              </p>
-              <p>
-                We maintain strict quality checks for each product we manufacture. Our dedicated
-                customer care approach allows us to guarantee complete satisfaction in terms of
-                durability, quality standards, and efficient performance over a long period of time.
-              </p>
+              <p>Karna Enterprises guarantees absolute quality of service. We manufacture all our products with precision and clarity in design, keeping in mind the quality standards applicable to adhesive and packaging materials.</p>
+              <p>We maintain strict quality checks for each product we manufacture. Our dedicated customer care approach allows us to guarantee complete satisfaction in terms of durability, quality standards, and efficient performance over a long period of time.</p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* TIMELINE */}
       <section className="about-timeline">
         <div className="about-inner">
-          <p className="section-label">How we got here</p>
-          <h2 className="section-title">Our journey</h2>
+          <Reveal>
+            <p className="section-label">How we got here</p>
+            <h2 className="section-title">Our journey</h2>
+          </Reveal>
           <div className="timeline">
             {milestones.map((m, i) => (
-              <div className="timeline-item" key={m.year}>
-                <div className="timeline-year">{m.year}</div>
-                <div className="timeline-line">
-                  <div className="timeline-dot"></div>
-                  {i < milestones.length - 1 && <div className="timeline-connector"></div>}
+              <Reveal key={m.year} delay={i * 70}>
+                <div className="timeline-item">
+                  <div className="timeline-year">{m.year}</div>
+                  <div className="timeline-line">
+                    <div className="timeline-dot"></div>
+                    {i < milestones.length - 1 && <div className="timeline-connector"></div>}
+                  </div>
+                  <div className="timeline-content">
+                    <h3>{m.title}</h3>
+                    <p>{m.desc}</p>
+                  </div>
                 </div>
-                <div className="timeline-content">
-                  <h3>{m.title}</h3>
-                  <p>{m.desc}</p>
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="about-cta">
+      <Reveal tag="section" className="about-cta">
         <div className="about-cta-inner">
           <div>
             <h2>Want to work with us?</h2>
             <p>Get in touch for a free quote or to discuss your packaging requirements.</p>
           </div>
           <div className="about-cta-btns">
-            <Link to="/contact" className="btn-white">
-              Contact Us <ArrowRight size={14} />
-            </Link>
-            <a
-              href="https://wa.me/919901506336?text=Hi, I would like to know more about Karna Enterprises"
-              className="btn-wa-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to="/contact" className="btn-white">Contact Us <ArrowRight size={14} /></Link>
+            <a href="https://wa.me/919901506336?text=Hi, I would like to know more about Karna Enterprises" className="btn-wa-outline" target="_blank" rel="noopener noreferrer">
               <MessageCircle size={15} /> WhatsApp Us
             </a>
           </div>
         </div>
-      </section>
+      </Reveal>
 
     </div>
   )

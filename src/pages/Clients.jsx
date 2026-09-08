@@ -1,6 +1,7 @@
 import { MessageCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import Reveal from '../components/Reveal'
 import './Clients.css'
 
 const featuredClients = [
@@ -54,12 +55,14 @@ function Clients() {
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="page-header-inner">
-          <p className="page-label">Who trusts us</p>
-          <h1>Our Clients</h1>
-          <p className="page-sub">
-            From automotive to food and beverage to apparel over 2,300 businesses
-            across India trust Karna Enterprises for their packaging needs.
-          </p>
+          <Reveal>
+            <p className="page-label">Who trusts us</p>
+            <h1>Our Clients</h1>
+            <p className="page-sub">
+              From automotive to food and beverage to apparel over 2,300 businesses
+              across India trust Karna Enterprises for their packaging needs.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -86,27 +89,26 @@ function Clients() {
       {/* FEATURED CLIENTS */}
       <section className="featured-section">
         <div className="clients-inner">
-          <p className="section-label">Key partnerships</p>
-          <h2 className="section-title">Featured Clients</h2>
-          <p className="section-sub">
-            These industry leaders rely on us for consistent quality, timely delivery,
-            and packaging solutions tailored to their needs.
-          </p>
+          <Reveal>
+            <p className="section-label">Key partnerships</p>
+            <h2 className="section-title">Featured Clients</h2>
+            <p className="section-sub">
+              These industry leaders rely on us for consistent quality, timely delivery,
+              and packaging solutions tailored to their needs.
+            </p>
+          </Reveal>
 
           <div className="featured-grid">
-            {featuredClients.map(({ name, description, logo }) => (
-              <div className="featured-card" key={name}>
-                <div className="featured-logo-wrap">
-                  <img
-                    src={logo}
-                    alt={`${name} logo`}
-                    className="featured-logo-img"
-                  />
+            {featuredClients.map(({ name, description, logo }, i) => (
+              <Reveal key={name} delay={i * 70}>
+                <div className="featured-card">
+                  <div className="featured-logo-wrap">
+                    <img src={logo} alt={`${name} logo`} className="featured-logo-img" />
+                  </div>
+                  <h3>{name}</h3>
+                  <p>{description}</p>
                 </div>
-
-                <h3>{name}</h3>
-                <p>{description}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -115,35 +117,35 @@ function Clients() {
       {/* ALL CLIENTS */}
       <section className="all-clients-section">
         <div className="clients-inner">
-          <p className="section-label">Our client network</p>
-          <h2 className="section-title">All Clients</h2>
-          <p className="section-sub">
-            A growing network of businesses across industries that trust us with their packaging requirements.
-          </p>
+          <Reveal>
+            <p className="section-label">Our client network</p>
+            <h2 className="section-title">All Clients</h2>
+            <p className="section-sub">
+              A growing network of businesses across industries that trust us with their packaging requirements.
+            </p>
+          </Reveal>
 
           <div className="all-clients-grid">
-            {allClients.map(name => (
-              <div className="client-name-chip" key={name}>
-                {name}
-              </div>
+            {allClients.map((name, i) => (
+              <Reveal key={name} delay={(i % 6) * 70}>
+                <div className="client-name-chip">{name}</div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="clients-cta">
+      <Reveal tag="section" className="clients-cta">
         <div className="clients-cta-inner">
           <div>
             <h2>Join our growing client network</h2>
             <p>Get a free quote and experience the Karna Enterprises difference.</p>
           </div>
-
           <div className="clients-cta-btns">
             <Link to="/contact" className="btn-white">
               Request Free Quote <ArrowRight size={14} />
             </Link>
-
             <a
               href="https://wa.me/919901506336?text=Hi, I would like to enquire about your packaging products"
               className="btn-wa-outline"
@@ -154,7 +156,7 @@ function Clients() {
             </a>
           </div>
         </div>
-      </section>
+      </Reveal>
     </div>
   )
 }

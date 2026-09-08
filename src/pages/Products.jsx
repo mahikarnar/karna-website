@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MessageCircle, ArrowRight, Search } from 'lucide-react'
+import Reveal from '../components/Reveal'
 import './Products.css'
 import { Helmet } from 'react-helmet-async'
 
@@ -170,12 +171,14 @@ function Products() {
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="page-header-inner">
-          <p className="page-label">What we make</p>
-          <h1>Our Products</h1>
-          <p className="page-sub">
-            A complete range of inner and outer packaging solutions from protective foam
-            fitments to branded tapes, all manufactured and supplied from Bangalore.
-          </p>
+          <Reveal>
+            <p className="page-label">What we make</p>
+            <h1>Our Products</h1>
+            <p className="page-sub">
+              A complete range of inner and outer packaging solutions from protective foam
+              fitments to branded tapes, all manufactured and supplied from Bangalore.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -206,39 +209,41 @@ function Products() {
           )}
 
           <div className="products-grid">
-            {filtered.map(({ image, name, desc, tags }) => (
-              <div className="product-card" key={name}>
-                <div className="product-card-top">
-                  <div className="product-image-wrap">
-                    <img src={image} alt={name} className="product-image" />
-                  </div>
-                  <h3>{name}</h3>
-                  <p>{desc}</p>
-                  <div className="product-card-bottom">
-                    <div className="product-tags">
-                      {tags.map(tag => (
-                        <span className="product-tag" key={tag}>{tag}</span>
-                      ))}
+            {filtered.map(({ image, name, desc, tags }, i) => (
+              <Reveal key={name} delay={(i % 6) * 70}>
+                <div className="product-card">
+                  <div className="product-card-top">
+                    <div className="product-image-wrap">
+                      <img src={image} alt={name} className="product-image" />
                     </div>
-                    <a
-                      href={`https://wa.me/919901506336?text=Hi, I would like to enquire about ${name}`}
-                      className="product-enquire-btn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MessageCircle size={14} />
-                      Enquire Now
-                    </a>
+                    <h3>{name}</h3>
+                    <p>{desc}</p>
+                    <div className="product-card-bottom">
+                      <div className="product-tags">
+                        {tags.map(tag => (
+                          <span className="product-tag" key={tag}>{tag}</span>
+                        ))}
+                      </div>
+                      <a
+                        href={`https://wa.me/919901506336?text=Hi, I would like to enquire about ${name}`}
+                        className="product-enquire-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MessageCircle size={14} />
+                        Enquire Now
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* CUSTOM SOLUTIONS BAND */}
-      <section className="custom-band">
+      <Reveal tag="section" className="custom-band">
         <div className="custom-band-inner">
           <div className="custom-band-text">
             <p className="page-label" style={{ color: '#F87191' }}>Need something specific?</p>
@@ -263,7 +268,7 @@ function Products() {
             </a>
           </div>
         </div>
-      </section>
+      </Reveal>
 
     </div>
   )

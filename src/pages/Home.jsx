@@ -11,6 +11,7 @@ import {
   Settings,
   ShieldCheck,
 } from 'lucide-react'
+import Reveal from '../components/Reveal'
 import './Home.css'
 
 const whyCards = [
@@ -104,19 +105,23 @@ function Home() {
       {/* WHY US */}
       <section className="section">
         <div className="section-inner">
-          <p className="section-label">Why choose us</p>
-          <h2 className="section-title">Built on reliability, trusted by industry</h2>
-          <p className="section-sub">
-            From Fanuc to Mother Dairy, over 2,000 businesses rely on us
-            for consistent quality and on-time delivery.
-          </p>
+          <Reveal>
+            <p className="section-label">Why choose us</p>
+            <h2 className="section-title">Built on reliability, trusted by industry</h2>
+            <p className="section-sub">
+              From Fanuc to Mother Dairy, over 2,000 businesses rely on us
+              for consistent quality and on-time delivery.
+            </p>
+          </Reveal>
           <div className="why-grid">
-            {whyCards.map(({ icon: Icon, title, desc }) => (
-              <div className="why-card" key={title}>
-                <div className="why-icon-wrap"><Icon size={20} /></div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </div>
+            {whyCards.map(({ icon: Icon, title, desc }, i) => (
+              <Reveal key={title} delay={i * 70}>
+                <div className="why-card">
+                  <div className="why-icon-wrap"><Icon size={20} /></div>
+                  <h3>{title}</h3>
+                  <p>{desc}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -125,28 +130,33 @@ function Home() {
       {/* PRODUCTS */}
       <section className="section section-alt">
         <div className="section-inner">
-          <p className="section-label">Our products</p>
-          <h2 className="section-title">Everything your business needs to pack right</h2>
-          <p className="section-sub">
-            A complete range of inner and outer packaging materials for manufacturing,
-            food, pharma, apparel and more.
-          </p>
+          <Reveal>
+            <p className="section-label">Our products</p>
+            <h2 className="section-title">Everything your business needs to pack right</h2>
+            <p className="section-sub">
+              A complete range of inner and outer packaging materials for manufacturing,
+              food, pharma, apparel and more.
+            </p>
+          </Reveal>
           <div className="product-grid">
-            {products.map(({ img, name, desc }) => (
-              <div className="product-card" key={name}>
-                <div className="product-thumb">
-                  <img src={img} alt={name} className="product-thumb-img"/></div>
-                <h4>{name}</h4>
-                <p>{desc}</p>
-                <a
-                  href="https://wa.me/919901506336?text=Hi I would like to enquire about your packaging products"
-                  className="product-enquire"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle size={13} /> Enquire Now
-                </a>
-              </div>
+            {products.map(({ img, name, desc }, i) => (
+              <Reveal key={name} delay={i * 70}>
+                <div className="product-card">
+                  <div className="product-thumb">
+                    <img src={img} alt={name} className="product-thumb-img" />
+                  </div>
+                  <h4>{name}</h4>
+                  <p>{desc}</p>
+                  <a
+                    href="https://wa.me/919901506336?text=Hi I would like to enquire about your packaging products"
+                    className="product-enquire"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle size={13} /> Enquire Now
+                  </a>
+                </div>
+              </Reveal>
             ))}
           </div>
           <Link to="/products" className="btn-outline">
@@ -158,16 +168,20 @@ function Home() {
       {/* CLIENTS */}
       <section className="section section-dark">
         <div className="section-inner">
-          <p className="section-label" style={{ color: '#F87191' }}>Our clients</p>
-          <h2 className="section-title" style={{ color: '#FFFFFF' }}>
-            Trusted by industry leaders across India
-          </h2>
-          <p className="section-sub" style={{ color: '#9CA3AF' }}>
-            From automotive to food and beverage to apparel, these brands trust us with their packaging.
-          </p>
+          <Reveal>
+            <p className="section-label" style={{ color: '#F87191' }}>Our clients</p>
+            <h2 className="section-title" style={{ color: '#FFFFFF' }}>
+              Trusted by industry leaders across India
+            </h2>
+            <p className="section-sub" style={{ color: '#9CA3AF' }}>
+              From automotive to food and beverage to apparel, these brands trust us with their packaging.
+            </p>
+          </Reveal>
           <div className="clients-grid">
-            {clients.map(name => (
-              <div className="client-chip" key={name}>{name}</div>
+            {clients.map((name, i) => (
+              <Reveal key={name} delay={i * 70}>
+                <div className="client-chip">{name}</div>
+              </Reveal>
             ))}
           </div>
           <Link to="/clients" className="btn-outline-light">
@@ -177,7 +191,7 @@ function Home() {
       </section>
 
       {/* BOTTOM CTA */}
-      <section className="cta-band">
+      <Reveal tag="section" className="cta-band">
         <div className="cta-inner">
           <div>
             <h2>Need packaging materials for your business?</h2>
@@ -197,7 +211,7 @@ function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </Reveal>
 
     </div>
   )

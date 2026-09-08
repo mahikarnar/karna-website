@@ -1,7 +1,8 @@
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
 import { useForm, ValidationError } from '@formspree/react'
 import { Helmet } from 'react-helmet-async'
-import ContactIllustration from '../assets/illustrations/contact-illustration.svg';
+import ContactIllustration from '../assets/illustrations/contact-illustration.svg'
+import Reveal from '../components/Reveal'
 import './Contact.css'
 
 function ContactForm() {
@@ -145,100 +146,54 @@ function Contact() {
             </section>
 
             {/* MAIN CONTACT SECTION */}
-            <section className="contact-section">
+            <Reveal tag="section" className="contact-section">
                 <div className="contact-inner">
                     <div className="contact-grid">
 
                         {/* LEFT — INFO */}
                         <div className="contact-info">
-
-                            <div className="contact-card">
-                                <div className="contact-card-icon"><Phone size={20} /></div>
-                                <div>
-                                    <p className="contact-card-label">Call us</p>
-                                    <a href="tel:+919901506336" className="contact-card-value">
-                                        +91 99015 06336
-                                    </a>
-                                    <p className="contact-card-note">Mon to Fri, 10:00 AM – 6:00 PM IST</p>
+                            {[
+                              { icon: <Phone size={20} />, label: 'Call us', value: <a href="tel:+919901506336" className="contact-card-value">+91 99015 06336</a>, note: 'Mon to Fri, 10:00 AM – 6:00 PM IST' },
+                              { icon: <MessageCircle size={20} />, label: 'WhatsApp', value: <a href="https://wa.me/919901506336?text=Hi, I would like to enquire about your packaging products" className="contact-card-value" target="_blank" rel="noopener noreferrer">+91 99015 06336</a>, note: 'Fastest way to reach us' },
+                              { icon: <Mail size={20} />, label: 'Email', value: <a href="mailto:info@karnaenterprises.in" className="contact-card-value">info@karnaenterprises.in</a>, note: 'We reply within 24 hours' },
+                              { icon: <MapPin size={20} />, label: 'Address', value: <p className="contact-card-value contact-address">Dinnepalya, CK Palya<br />Electronic City Road<br />Bangalore 560083</p>, note: null },
+                              { icon: <Clock size={20} />, label: 'Business hours', value: <p className="contact-card-value">Monday – Friday</p>, note: '10:00 AM – 6:00 PM IST' },
+                            ].map(({ icon, label, value, note }, i) => (
+                              <Reveal key={label} delay={i * 60}>
+                                <div className="contact-card">
+                                  <div className="contact-card-icon">{icon}</div>
+                                  <div>
+                                    <p className="contact-card-label">{label}</p>
+                                    {value}
+                                    {note && <p className="contact-card-note">{note}</p>}
+                                  </div>
                                 </div>
-                            </div>
+                              </Reveal>
+                            ))}
 
-                            <div className="contact-card">
-                                <div className="contact-card-icon"><MessageCircle size={20} /></div>
-                                <div>
-                                    <p className="contact-card-label">WhatsApp</p>
-                                    <a
-                                        href="https://wa.me/919901506336?text=Hi, I would like to enquire about your packaging products"
-                                        className="contact-card-value"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        +91 99015 06336
-                                    </a>
-                                    <p className="contact-card-note">Fastest way to reach us</p>
-                                </div>
-                            </div>
-
-                            <div className="contact-card">
-                                <div className="contact-card-icon"><Mail size={20} /></div>
-                                <div>
-                                    <p className="contact-card-label">Email</p>
-                                    <a href="mailto:info@karnaenterprises.in" className="contact-card-value">
-                                        info@karnaenterprises.in
-                                    </a>
-                                    <p className="contact-card-note">We reply within 24 hours</p>
-                                </div>
-                            </div>
-
-                            <div className="contact-card">
-                                <div className="contact-card-icon"><MapPin size={20} /></div>
-                                <div>
-                                    <p className="contact-card-label">Address</p>
-                                    <p className="contact-card-value contact-address">
-                                        Dinnepalya, CK Palya<br />
-                                        Electronic City Road<br />
-                                        Bangalore 560083
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="contact-card">
-                                <div className="contact-card-icon"><Clock size={20} /></div>
-                                <div>
-                                    <p className="contact-card-label">Business hours</p>
-                                    <p className="contact-card-value">Monday – Friday</p>
-                                    <p className="contact-card-note">10:00 AM – 6:00 PM IST</p>
-                                </div>
-                            </div>
-
-                            <a
-                                href="https://wa.me/919901506336?text=Hi, I would like to enquire about your packaging products"
-                                className="whatsapp-big-btn"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <MessageCircle size={20} />
-                                Chat with us on WhatsApp
-                            </a>
-
+                            <Reveal delay={300}>
+                              <a href="https://wa.me/919901506336?text=Hi, I would like to enquire about your packaging products" className="whatsapp-big-btn" target="_blank" rel="noopener noreferrer">
+                                <MessageCircle size={20} /> Chat with us on WhatsApp
+                              </a>
+                            </Reveal>
                         </div>
 
                         {/* RIGHT — FORM */}
-                        <div className="contact-form-wrap">
+                        <Reveal className="contact-form-wrap" delay={100}>
                             <h2>Send an Enquiry</h2>
                             <p className="form-sub">
                                 Fill in your details and we will get back to you within 24 hours
                                 with pricing and availability.
                             </p>
                             <ContactForm />
-                        </div>
+                        </Reveal>
 
                     </div>
                 </div>
-            </section>
+            </Reveal>
 
             {/* MAP */}
-            <section className="map-section">
+            <Reveal tag="section" className="map-section">
                 <div className="map-label">
                     <MapPin size={16} />
                     Dinnepalya, CK Palya, Electronic City Road, Bangalore 560083
@@ -253,7 +208,7 @@ function Contact() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                 />
-            </section>
+            </Reveal>
 
         </div>
     )
