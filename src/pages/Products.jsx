@@ -1,4 +1,5 @@
-import { MessageCircle, ArrowRight } from 'lucide-react'
+import { useState } from 'react'
+import { MessageCircle, ArrowRight, Search } from 'lucide-react'
 import './Products.css'
 import { Helmet } from 'react-helmet-async'
 
@@ -150,6 +151,14 @@ const products = [
 ]
 
 function Products() {
+  const [query, setQuery] = useState('')
+
+  const filtered = query.trim() === ''
+    ? products
+    : products.filter(p =>
+        p.name.toLowerCase().startsWith(query.trim().toLowerCase())
+      )
+
   return (
     <div className="products-page">
       <Helmet>
@@ -173,8 +182,31 @@ function Products() {
       {/* PRODUCTS GRID */}
       <section className="products-section">
         <div className="products-inner">
+
+          {/* SEARCH BAR */}
+          <div className="products-search-wrap">
+            <Search size={18} className="products-search-icon" />
+            <input
+              type="text"
+              className="products-search"
+              placeholder="Search products"
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+            />
+            {query && (
+              <button className="products-search-clear" onClick={() => setQuery('')} aria-label="Clear search">
+                ×
+              </button>
+            )}
+          </div>
+
+          {/* NO RESULTS */}
+          {filtered.length === 0 && (
+            <p className="products-no-results">No products found for "{query}"</p>
+          )}
+
           <div className="products-grid">
-            {products.map(({ image, name, desc, tags }) => (
+            {filtered.map(({ image, name, desc, tags }) => (
               <div className="product-card" key={name}>
                 <div className="product-card-top">
                   <div className="product-image-wrap">

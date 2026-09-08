@@ -108,6 +108,23 @@
   color: #ffffff;
 }
 
+.nav-links a.active {
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #C41E3A;
+  border-radius: 2px;
+}
+
 .nav-cta {
   display: inline-flex !important;
   align-items: center;
@@ -144,25 +161,49 @@
   .nav-links {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     position: absolute;
     top: 72px;
     left: 0;
     right: 0;
-    background-color: #1A1A2E;
-    padding: 20px 24px 28px;
+    background-color: rgba(30, 30, 50, 0.97);
+    backdrop-filter: blur(8px);
+    padding: 20px 28px 28px;
     gap: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
 
   .nav-links.open { display: flex; }
+
+  .nav-links a {
+    font-size: 15px;
+    color: #D1D5DB;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: right;
+  }
+
+  .nav-cta {
+    margin-left: auto;
+  }
 }
 
 @media (max-width: 600px) {
-  .navbar-container { padding: 0 20px; height: 64px; }
-  .ke-logo-wrap { width: 42px; height: 42px; }
-  .ke-logo-img { width: 38px; height: 38px; }
-  .logo-company { font-size: 17px; }
-  .dura-logo-img { height: 22px; }
+  .navbar-container {
+    padding: 0 16px;
+    height: 64px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .navbar-logo { gap: 8px; max-width: calc(100% - 48px); overflow: hidden; }
+  .ke-logo-wrap { width: 65px; height: 44px; flex-shrink: 0; }
+  .ke-logo-img { width: 60px; height: 40px; }
+  .logo-company { font-size: 20px; }
+  .logo-divider { display: none; }
+  .dura-logo-wrap { display: none; }
   .nav-links { top: 64px; }
 }

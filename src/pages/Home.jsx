@@ -30,10 +30,7 @@ const products = [
 ]
 
 const clients = [
-  'Fanuc India Pvt Ltd', 'Mother Dairy', 'Sandvik Asia',
-  'Natural Remedies', 'Soch Apparels', 'Sri Sri Publication',
-  'Namdhari Seeds', 'Printo Document Services',
-  'Sogefi Engine Systems', 'Metal Impact', 'IQF Foods', 'Shakti Automotive',
+  'Alleima India','Mother Dairy','Printo','Fanuc India','Soch Apparels','Impress Apparel', 'IQF Foods', 'Namdhari', 'Sri Sri Publication', 'Transworld'
 ]
 
 function Home() {
@@ -72,6 +69,13 @@ function Home() {
               View Products <ArrowRight size={14} />
             </Link>
           </div>
+        </div>
+        <div className="hero-image-wrap">
+          <img
+            src="/images/KEoffice.jpeg"
+            alt="Karna Enterprises Office"
+            className="hero-office-img"
+          />
         </div>
         <div className="hero-ring hero-ring-1"></div>
         <div className="hero-ring hero-ring-2"></div>

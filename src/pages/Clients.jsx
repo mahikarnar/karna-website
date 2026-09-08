@@ -10,9 +10,9 @@ const featuredClients = [
     logo: '/images/clients/alleimaLogo.png',
   },
   {
-    name: 'Allied Solutions Pvt Ltd',
-    description: 'Industrial products and solutions provider',
-    logo: '/images/clients/alliedLogo.png',
+    name: 'Mother Dairy Fruit & Vegetables Pvt Ltd',
+    description: 'Leading dairy and food products company',
+    logo: '/images/clients/motherDairy.png',
   },
   {
     name: 'Printo Document Services Pvt Ltd',
@@ -20,9 +20,9 @@ const featuredClients = [
     logo: '/images/clients/printoLogo.png',
   },
   {
-    name: 'Purflux Engine Systems Pvt Ltd',
-    description: 'Automotive filtration systems manufacturer',
-    logo: '/images/clients/purfluxLogo.jpg',
+    name: 'Fanuc India Pvt Ltd',
+    description: 'Industrial automation and robotics solutions provider',
+    logo: '/images/clients/fanuc.png',
   },
   {
     name: 'Soch Apparels Pvt Ltd',
@@ -31,22 +31,12 @@ const featuredClients = [
   },
 ]
 
-const allClients = [
-  'Adharsha Packaging Pvt Ltd',
-  'Ags Fourwinds India Pvt Ltd',
-  "Arthur's Food Company Pvt Ltd",
-  'Fanuc India Pvt Ltd',
-  'Impress Apparel Machines Pvt Ltd',
+const allClients = [ 
+  'Impress Apparel Pvt Ltd',
   'IQF Foods Pvt Ltd',
-  'Matts Corner India Pvt Ltd',
-  'Metal Impact Pvt Ltd',
-  'Mother Dairy Fruit & Vegetables Pvt Ltd',
   'Namdhari Seeds Pvt Ltd',
-  'Natural Remedies Pvt Ltd',
-  'Shakti Automotive',
   'Sri Sri Publication',
   'Transworld International',
-  'Wow Craft',
 ]
 
 function Clients() {
@@ -128,8 +118,7 @@ function Clients() {
           <p className="section-label">Our client network</p>
           <h2 className="section-title">All Clients</h2>
           <p className="section-sub">
-            A growing network of businesses across industries that trust us
-            with their packaging requirements.
+            A growing network of businesses across industries that trust us with their packaging requirements.
           </p>
 
           <div className="all-clients-grid">

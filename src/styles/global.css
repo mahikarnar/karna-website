@@ -14,12 +14,21 @@
   --whatsapp:   #25D366;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* prevent any element from causing horizontal scroll */
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--background);
   color: var(--text);
   font-size: 16px;
   line-height: 1.6;
+  /* belt-and-suspenders overflow fix */
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,10 +39,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 48px; }
 h2 { font-size: 36px; }
 h3 { font-size: 24px; }
-
-html {
-  scroll-behavior: smooth;
-}
 
 img {
   max-width: 100%;

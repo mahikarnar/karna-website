@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { Menu, X, Mail } from 'lucide-react'
 import './Navbar.css'
 
@@ -30,11 +30,11 @@ function Navbar() {
         </button>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
-          <li><Link to="/products" onClick={() => setMenuOpen(false)}>Products</Link></li>
-          <li><Link to="/clients" onClick={() => setMenuOpen(false)}>Clients</Link></li>
-          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+          <li><NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink></li>
+          <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
+          <li><NavLink to="/products" onClick={() => setMenuOpen(false)}>Products</NavLink></li>
+          <li><NavLink to="/clients" onClick={() => setMenuOpen(false)}>Clients</NavLink></li>
+          <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
           <li>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=info@karnaenterprises.in"

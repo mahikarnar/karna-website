@@ -86,7 +86,7 @@
   font-size: 32px;
   font-weight: 700;
   color: #1A1A2E;
-  margin-bottom: 12px;
+  margin-bottom:2px;
   line-height: 1.25;
 }
 
@@ -94,7 +94,7 @@
   font-size: 15px;
   color: #555555;
   line-height: 1.75;
-  max-width: 560px;
+  max-width: 860px;
   margin-bottom: 40px;
 }
 
@@ -182,7 +182,7 @@
 
 .all-clients-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
 
