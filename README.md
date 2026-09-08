@@ -10,7 +10,6 @@
 
 </div>
 
----
 
 ## About
 
@@ -30,7 +29,7 @@ Official website for **Karna Enterprises**, a Bangalore-based manufacturer and s
 | **Clients** | Featured client logos, full client list, stats |
 | **Contact** | Contact form , address, phone, map embed |
 
----
+
 
 ## Tech Stack
 
