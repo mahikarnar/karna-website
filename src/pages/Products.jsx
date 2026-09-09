@@ -1,8 +1,167 @@
 import { useState } from 'react'
 import { MessageCircle, ArrowRight, Search } from 'lucide-react'
 import Reveal from '../components/Reveal'
+import FAQSection from '../components/FAQSection'
 import './Products.css'
 import { Helmet } from 'react-helmet-async'
+
+const categoryOverviews = [
+  {
+    title: 'EPE Foam Packaging Products',
+    desc: 'Karna Enterprises manufactures a complete range of EPE Foam products in Bangalore, including EPE Foam Corner, EPE Foam Fitment, EPE Boxes, EPE Sheets, EPE Rolls, and EPE Pouches — ideal for cushioning fragile goods during transit across Karnataka and Hosur.',
+  },
+  {
+    title: 'Bubble Wrap & ESD Packaging Products',
+    desc: 'Our Air Bubble Pouches, Bubble Bags, and ESD Pink Bubble Pouches protect electronic and sensitive items, while Adhesive Bubble Bags offer quick, tamper-proof sealing for businesses across South India.',
+  },
+  {
+    title: 'Thermocol Packaging Products',
+    desc: 'We supply Thermocol Sheets, Thermocol Boxes, Thermocol Fitment Boxes, and Thermocol Mug Boxes for insulation and structural protection, widely used across Bangalore, Karnataka, and Tamil Nadu.',
+  },
+  {
+    title: 'Adhesive Tapes for Industrial Packaging',
+    desc: 'From BOPP Adhesive Tapes to Brown Tapes, Masking Tapes, and Custom Printed Tapes, our tape range covers every industrial and commercial packaging requirement in Hosur and South India.',
+  },
+  {
+    title: 'Straps, Wraps & Films',
+    desc: 'Secure your shipments with PET Strap, PP Strap, Stretch Wrap, and Wrapping Film — trusted by businesses across Bangalore and Hosur.',
+  },
+  {
+    title: 'Corrugated & Other Packaging Products',
+    desc: 'We also manufacture Corrugated Rolls, Corrugated Boxes, Aluminium Foil Pouches, and Polythene LD HM for versatile packaging needs across South India.',
+  },
+]
+
+const productsFaqs = [
+  {
+    question: 'What packaging products does Karna Enterprises offer?',
+    answer: 'We offer EPE Foam, Bubble Wrap, ESD Packaging, Thermocol, Adhesive Tapes, Straps, Wraps, and Corrugated Boxes for a wide range of industries.',
+  },
+  {
+    question: 'Do you manufacture ESD-safe packaging for electronics?',
+    answer: 'Yes, our ESD Pink Bubble Pouches and ESD Pouches are specifically designed to protect electronic components from static damage.',
+  },
+  {
+    question: 'What types of tapes do you provide for industrial use?',
+    answer: 'We provide BOPP Adhesive Tapes, Brown Tapes, Masking Tapes, Filament Tapes, Double Side Tapes, and Custom Printed Tapes for various industrial applications.',
+  },
+  {
+    question: 'Can I get Thermocol packaging customized for my product?',
+    answer: 'Yes, we manufacture custom Thermocol Fitment Boxes and Molded Fitments tailored to your specific product dimensions.',
+  },
+  {
+    question: 'Do you supply corrugated boxes and rolls in bulk?',
+    answer: 'Yes, we manufacture and supply Corrugated Boxes and Corrugated Rolls in bulk quantities across Bangalore, Hosur, and South India.',
+  },
+]
+
+const productsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Packaging Products by Karna Enterprises",
+      "url": "https://karnaenterprises.in/products",
+      "description": "Explore Karna Enterprises' complete range of packaging products – EPE Foam, Bubble Wrap, Thermocol, BOPP Tapes, Straps & Corrugated Boxes. Serving Bangalore, Hosur & South India.",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "EPE Foam Corner" },
+          { "@type": "ListItem", "position": 2, "name": "EPE Foam Fitment" },
+          { "@type": "ListItem", "position": 3, "name": "EPE Boxes" },
+          { "@type": "ListItem", "position": 4, "name": "EPE Sheets" },
+          { "@type": "ListItem", "position": 5, "name": "EPE Rolls" },
+          { "@type": "ListItem", "position": 6, "name": "EPE Pouches" },
+          { "@type": "ListItem", "position": 7, "name": "EPE Foam Bags" },
+          { "@type": "ListItem", "position": 8, "name": "EPE Edge Protectors" },
+          { "@type": "ListItem", "position": 9, "name": "Air Bubble Pouches" },
+          { "@type": "ListItem", "position": 10, "name": "Bubble Bags" },
+          { "@type": "ListItem", "position": 11, "name": "ESD Pink Bubble Pouches" },
+          { "@type": "ListItem", "position": 12, "name": "ESD Pouch" },
+          { "@type": "ListItem", "position": 13, "name": "Adhesive Bubble Bags" },
+          { "@type": "ListItem", "position": 14, "name": "Thermocol Sheet" },
+          { "@type": "ListItem", "position": 15, "name": "Thermocol Boxes" },
+          { "@type": "ListItem", "position": 16, "name": "Thermocol Fitment Box" },
+          { "@type": "ListItem", "position": 17, "name": "Thermocol Molded Fitment" },
+          { "@type": "ListItem", "position": 18, "name": "Thermocol Mug Boxes" },
+          { "@type": "ListItem", "position": 19, "name": "BOPP Adhesive Tapes" },
+          { "@type": "ListItem", "position": 20, "name": "Brown Tapes" },
+          { "@type": "ListItem", "position": 21, "name": "Masking Tapes" },
+          { "@type": "ListItem", "position": 22, "name": "Custom Printed Tapes" },
+          { "@type": "ListItem", "position": 23, "name": "PET Strap" },
+          { "@type": "ListItem", "position": 24, "name": "PP Strap" },
+          { "@type": "ListItem", "position": 25, "name": "Stretch Wrap" },
+          { "@type": "ListItem", "position": 26, "name": "Corrugated Boxes" },
+          { "@type": "ListItem", "position": 27, "name": "Corrugated Rolls" },
+          { "@type": "ListItem", "position": 28, "name": "Aluminium Foil Pouch" },
+          { "@type": "ListItem", "position": 29, "name": "Polythene LD HM" }
+        ]
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Karna Enterprises",
+        "url": "https://karnaenterprises.in/",
+        "logo": "https://karnaenterprises.in/images/KElogo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dinnepalya, CK Palya, Electronic City Road",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "postalCode": "560083",
+          "addressCountry": "IN"
+        },
+        "email": "info@karnaenterprises.in",
+        "telephone": "+91 99015 06336",
+        "areaServed": ["Bangalore", "Karnataka", "Hosur", "Tamil Nadu", "South India"]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What packaging products does Karna Enterprises offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer EPE Foam, Bubble Wrap, ESD Packaging, Thermocol, Adhesive Tapes, Straps, Wraps, and Corrugated Boxes for a wide range of industries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you manufacture ESD-safe packaging for electronics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our ESD Pink Bubble Pouches and ESD Pouches are specifically designed to protect electronic components from static damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of tapes do you provide for industrial use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide BOPP Adhesive Tapes, Brown Tapes, Masking Tapes, Filament Tapes, Double Side Tapes, and Custom Printed Tapes for various industrial applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get Thermocol packaging customized for my product?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we manufacture custom Thermocol Fitment Boxes and Molded Fitments tailored to your specific product dimensions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you supply corrugated boxes and rolls in bulk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we manufacture and supply Corrugated Boxes and Corrugated Rolls in bulk quantities across Bangalore, Hosur, and South India."
+          }
+        }
+      ]
+    }
+  ]
+}
 
 const products = [
   {
@@ -163,9 +322,15 @@ function Products() {
   return (
     <div className="products-page">
       <Helmet>
-        <title>Packaging Products | Karna Enterprises Bangalore</title>
-        <meta name="description" content="Browse our full range of packaging products — BOPP tapes, thermocol boxes, EPE foam fitments, air bubble pouches, corrugated boxes, PP strapping, stretch film and more." />
-        <link rel="canonical" href="https://www.karnaenterprises.in/products" />
+        <title>Packaging Products in Bangalore & Hosur | EPE Foam, Tapes, Thermocol – Karna Enterprises</title>
+        <meta
+          name="description"
+          content="Explore Karna Enterprises' complete range of packaging products – EPE Foam, Bubble Wrap, Thermocol, BOPP Tapes, Straps & Corrugated Boxes. Serving Bangalore, Hosur & South India."
+        />
+        <link rel="canonical" href="https://karnaenterprises.in/products" />
+        <script type="application/ld+json">
+          {JSON.stringify(productsSchema)}
+        </script>
       </Helmet>
 
       {/* PAGE HEADER */}
@@ -173,12 +338,38 @@ function Products() {
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">What we make</p>
-            <h1>Our Products</h1>
+            <h1>Packaging Products Manufactured in Bangalore, Karnataka</h1>
             <p className="page-sub">
               A complete range of inner and outer packaging solutions from protective foam
               fitments to branded tapes, all manufactured and supplied from Bangalore.
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* CATEGORIES OVERVIEW SECTION WITH EXACT H2 HEADERS AND CONTENT */}
+      <section className="categories-overview-section">
+        <div className="products-inner">
+          <Reveal>
+            <p className="page-label" style={{ color: '#C41E3A' }}>Category Range</p>
+            <h2 style={{ fontSize: '28px', color: '#1A1A2E', marginBottom: '8px' }}>
+              Specialised Packaging Solutions by Category
+            </h2>
+            <p style={{ color: '#666', fontSize: '15px' }}>
+              Comprehensive packaging manufactured to protect products across industries in Bangalore, Hosur, and South India.
+            </p>
+          </Reveal>
+
+          <div className="categories-grid">
+            {categoryOverviews.map(({ title, desc }, i) => (
+              <Reveal key={title} delay={(i % 3) * 80}>
+                <div className="category-overview-card">
+                  <h2>{title}</h2>
+                  <p>{desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -269,6 +460,13 @@ function Products() {
           </div>
         </div>
       </Reveal>
+
+      {/* 5 FAQS FOR PRODUCTS PAGE */}
+      <FAQSection
+        title="Frequently Asked Questions"
+        subtitle="Common queries about our packaging product materials, ESD safety, custom fitments, and bulk order supply."
+        faqs={productsFaqs}
+      />
 
     </div>
   )

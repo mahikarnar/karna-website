@@ -1,7 +1,8 @@
-import { Eye, Users, ShieldCheck, Handshake, ArrowRight, MessageCircle } from 'lucide-react'
+import { Eye, Users, ShieldCheck, ArrowRight, MessageCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Reveal from '../components/Reveal'
+import FAQSection from '../components/FAQSection'
 import './About.css'
 
 const milestones = [
@@ -12,24 +13,171 @@ const milestones = [
   { year: '2024', title: 'Today', desc: '2,342+ clients, 6,302+ orders completed, and still growing. Trusted by brands like Fanuc, Mother Dairy, and Sandvik Asia.' },
 ]
 
+const aboutFaqs = [
+  {
+    question: 'Where is Karna Enterprises located?',
+    answer: 'Karna Enterprises is based in Bangalore, Karnataka, and serves customers across Hosur, Tamil Nadu, and South India.',
+  },
+  {
+    question: "What is Karna Enterprises' area of expertise?",
+    answer: 'We specialize in manufacturing and supplying protective packaging materials including EPE Foam, Thermocol, Bubble Wrap, Tapes, Straps, and Corrugated Boxes.',
+  },
+  {
+    question: 'Does Karna Enterprises serve businesses outside Bangalore?',
+    answer: 'Yes, we supply packaging materials to businesses across Karnataka, Hosur, Tamil Nadu, and other parts of South India.',
+  },
+  {
+    question: 'What makes Karna Enterprises different from other packaging suppliers?',
+    answer: 'Our focus on product quality, wide product range, and reliable delivery has helped us build long-term relationships with businesses across South India.',
+  },
+  {
+    question: 'How can I learn more about your product range?',
+    answer: 'You can explore our full product range on our website or contact our team directly for detailed information and quotes.',
+  },
+]
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "name": "About Karna Enterprises",
+      "url": "https://karnaenterprises.in/about",
+      "description": "Karna Enterprises is a trusted manufacturer and supplier of EPE Foam, Thermocol, BOPP Tapes, Bubble Wrap, Straps & Corrugated Boxes serving Bangalore, Hosur & South India.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Karna Enterprises",
+        "url": "https://karnaenterprises.in/",
+        "logo": "https://karnaenterprises.in/images/KElogo.png",
+        "image": "https://karnaenterprises.in/images/KElogo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dinnepalya, CK Palya, Electronic City Road",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "postalCode": "560083",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.8400,
+          "longitude": 77.6000
+        },
+        "email": "info@karnaenterprises.in",
+        "telephone": "+91 99015 06336",
+        "areaServed": [
+          "Bangalore",
+          "Karnataka",
+          "Hosur",
+          "Tamil Nadu",
+          "South India"
+        ],
+        "keywords": [
+          "EPE Foam Manufacturer in Bangalore",
+          "Thermocol Boxes Supplier in Karnataka",
+          "BOPP Tapes Manufacturer in Hosur",
+          "Corrugated Boxes Supplier in South India",
+          "Bubble Wrap Supplier in Bangalore"
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Karna Enterprises located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karna Enterprises is based in Bangalore, Karnataka, and serves customers across Hosur, Tamil Nadu, and South India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Karna Enterprises' area of expertise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in manufacturing and supplying protective packaging materials including EPE Foam, Thermocol, Bubble Wrap, Tapes, Straps, and Corrugated Boxes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Karna Enterprises serve businesses outside Bangalore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we supply packaging materials to businesses across Karnataka, Hosur, Tamil Nadu, and other parts of South India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Karna Enterprises different from other packaging suppliers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our focus on product quality, wide product range, and reliable delivery has helped us build long-term relationships with businesses across South India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I learn more about your product range?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can explore our full product range on our website or contact our team directly for detailed information and quotes."
+          }
+        }
+      ]
+    }
+  ]
+}
+
 function About() {
   return (
     <div className="about-page">
       <Helmet>
-        <title>About Us | Karna Enterprises Bangalore</title>
-        <meta name="description" content="About Karna Enterprises — a packaging materials manufacturer in Bangalore since 2010. 2,342+ clients, 6,302+ orders, 100% satisfaction." />
-        <link rel="canonical" href="https://www.karnaenterprises.in/about" />
+        <title>About Karna Enterprises | Packaging Materials Manufacturer in Bangalore & Hosur</title>
+        <meta
+          name="description"
+          content="Learn about Karna Enterprises, a trusted manufacturer of EPE Foam, Thermocol, BOPP Tapes & Corrugated Packaging serving Bangalore, Hosur & South India since our founding."
+        />
+        <link rel="canonical" href="https://karnaenterprises.in/about" />
+        <script type="application/ld+json">
+          {JSON.stringify(aboutSchema)}
+        </script>
       </Helmet>
+
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">Our story</p>
-            <h1>About Karna Enterprises</h1>
+            <h1>About Karna Enterprises – Packaging Materials Manufacturer in Bangalore</h1>
             <p className="page-sub">
               A Bangalore-based manufacturer and supplier of premium packaging materials,
               serving industries across India since 2010.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* H2: OUR PACKAGING PRODUCT RANGE SECTION */}
+      <section className="about-range-section">
+        <div className="about-inner">
+          <Reveal>
+            <p className="section-label">Our product expertise</p>
+            <h2 className="section-title">Our Packaging Product Range Across Bangalore, Karnataka, Hosur & South India</h2>
+            <div className="about-range-content">
+              <p>
+                Karna Enterprises is a trusted manufacturer and supplier of high-quality packaging materials based in Bangalore, Karnataka, serving customers across Hosur, Tamil Nadu, and South India. With years of experience in the packaging industry, we specialize in protective and industrial packaging solutions designed to meet diverse business needs.
+              </p>
+              <p>
+                Our product range includes EPE Foam Corner, EPE Foam Fitment, EPE Boxes, EPE Sheets, and EPE Rolls for cushioning and protection, along with Air Bubble Pouches, ESD Pink Bubble Pouches, and Adhesive Bubble Bags for sensitive and electronic goods. We also manufacture Thermocol Sheets, Thermocol Boxes, and Thermocol Fitment solutions for insulation and structural support.
+              </p>
+              <p>
+                In addition, we offer a complete range of tapes — including BOPP Adhesive Tapes, Brown Tapes, Masking Tapes, and Custom Printed Tapes — along with PET Strap, PP Strap, Stretch Wrap, and Corrugated Boxes to complete your packaging requirements.
+              </p>
+              <p>
+                At Karna Enterprises, our commitment to quality, reliability, and timely delivery has made us a preferred packaging partner for businesses across Bangalore, Hosur, and South India.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -194,6 +342,13 @@ function About() {
           </div>
         </div>
       </section>
+
+      {/* 5 FAQS FOR ABOUT PAGE */}
+      <FAQSection
+        title="Frequently Asked Questions"
+        subtitle="Learn more about Karna Enterprises, our history, our capabilities, and service regions."
+        faqs={aboutFaqs}
+      />
 
       {/* CTA */}
       <Reveal tag="section" className="about-cta">
