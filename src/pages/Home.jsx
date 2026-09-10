@@ -12,6 +12,7 @@ import {
   ShieldCheck,
 } from 'lucide-react'
 import Reveal from '../components/Reveal'
+import FAQSection from '../components/FAQSection'
 import './Home.css'
 
 const whyCards = [
@@ -34,15 +35,138 @@ const clients = [
   'Alleima India','Mother Dairy','Printo','Fanuc India','Soch Apparels','Impress Apparel', 'IQF Foods', 'Namdhari', 'Sri Sri Publication', 'Transworld'
 ]
 
+const homeFaqs = [
+  {
+    question: 'What packaging materials does Karna Enterprises manufacture?',
+    answer: 'Karna Enterprises manufactures and supplies EPE Foam, Bubble Wrap, Thermocol, BOPP Tapes, Straps, Stretch Wrap, and Corrugated Boxes for industrial and commercial packaging needs.',
+  },
+  {
+    question: 'Do you supply packaging materials in Hosur and other parts of South India?',
+    answer: 'Yes, we supply packaging materials across Bangalore, Hosur, and other locations in South India, catering to businesses of all sizes.',
+  },
+  {
+    question: 'What types of tapes are available from Karna Enterprises?',
+    answer: 'We offer a wide range of tapes including BOPP Adhesive Tapes, Brown Tapes, Masking Tapes, Craft Paper Tapes, Filament Tapes, and Custom Printed Tapes.',
+  },
+  {
+    question: 'Can I get custom packaging solutions for my products?',
+    answer: 'Yes, we provide custom packaging solutions including Thermocol Fitment Boxes, Molded Fitments, and Custom Printed Tapes tailored to your specific product requirements.',
+  },
+  {
+    question: 'How can I request a quote for bulk packaging materials?',
+    answer: 'You can request a quote by contacting us directly through our website, phone, or email, and our team will assist you with pricing and product availability.',
+  },
+]
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Karna Enterprises",
+      "url": "https://karnaenterprises.in/overviewofhospital.html",
+      "logo": "https://karnaenterprises.in/images/KElogo.png",
+      "image": "https://karnaenterprises.in/images/KElogo.png",
+      "description": "Karna Enterprises supplies EPE Foam, Bubble Wrap, Thermocol, BOPP Tapes, Straps & Corrugated Boxes across Bangalore, Hosur & South India.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dinnepalya, CK Palya, Electronic City Road",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560083",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 12.8400,
+        "longitude": 77.6000
+      },
+      "email": "info@karnaenterprises.in",
+      "telephone": "+91 99015 06336",
+      "datePublished": "2025-04-10",
+      "areaServed": [
+        "Bangalore",
+        "Hosur",
+        "Electronic City",
+        "CK Palya",
+        "Dinnepalya",
+        "South India"
+      ],
+      "keywords": [
+        "Packaging Materials Manufacturer in Bangalore & Hosur",
+        "EPE Foam Manufacturer in Bangalore",
+        "Thermocol Boxes Supplier in Bangalore",
+        "BOPP Tapes Manufacturer in Bangalore",
+        "Corrugated Boxes Supplier in Hosur",
+        "Bubble Wrap Supplier in Bangalore"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What packaging materials does Karna Enterprises manufacture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karna Enterprises manufactures and supplies EPE Foam, Bubble Wrap, Thermocol, BOPP Tapes, Straps, Stretch Wrap, and Corrugated Boxes for industrial and commercial packaging needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you supply packaging materials in Hosur and other parts of South India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we supply packaging materials across Bangalore, Hosur, and other locations in South India, catering to businesses of all sizes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of tapes are available from Karna Enterprises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer a wide range of tapes including BOPP Adhesive Tapes, Brown Tapes, Masking Tapes, Craft Paper Tapes, Filament Tapes, and Custom Printed Tapes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get custom packaging solutions for my products?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide custom packaging solutions including Thermocol Fitment Boxes, Molded Fitments, and Custom Printed Tapes tailored to your specific product requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I request a quote for bulk packaging materials?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can request a quote by contacting us directly through our website, phone, or email, and our team will assist you with pricing and product availability."
+          }
+        }
+      ]
+    }
+  ]
+}
+
 function Home() {
   return (
     <div className="home">
 
       <Helmet>
-        <title>Karna Enterprises | Durapack Adhesive Tape </title>
-        <meta name="description" content="Karna Enterprises is a Bangalore-based manufacturer and supplier of BOPP tapes, thermocol boxes, EPE foam, air bubble pouches, corrugated boxes and custom packaging solutions since 2010." />
-        <meta name="keywords" content="packaging materials Bangalore, BOPP tapes, thermocol boxes, EPE foam, corrugated boxes, air bubble pouches, packaging manufacturer Bangalore" />
-        <link rel="canonical" href="https://www.karnaenterprises.in/" />
+        <title>Packaging Materials Manufacturer in Bangalore & Hosur | Karna Enterprises</title>
+        <meta
+          name="description"
+          content="Karna Enterprises supplies EPE Foam, Bubble Wrap, Thermocol, BOPP Tapes, Straps & Corrugated Boxes across Bangalore, Hosur & South India. Get a quote today."
+        />
+        <meta
+          name="keywords"
+          content="Packaging Materials Manufacturer in Bangalore & Hosur, EPE Foam Manufacturer in Bangalore, Thermocol Boxes Supplier in Bangalore, BOPP Tapes Manufacturer in Bangalore, Corrugated Boxes Supplier in Hosur, Bubble Wrap Supplier in Bangalore"
+        />
+        <link rel="canonical" href="https://karnaenterprises.in/" />
+        <script type="application/ld+json">
+          {JSON.stringify(homeSchema)}
+        </script>
       </Helmet>
 
       {/* HERO */}
@@ -102,15 +226,15 @@ function Home() {
         </div>
       </section>
 
-      {/* WHY US */}
+      {/* H2 SEO & WHY US SECTION */}
       <section className="section">
         <div className="section-inner">
           <Reveal>
             <p className="section-label">Why choose us</p>
-            <h2 className="section-title">Built on reliability, trusted by industry</h2>
+            <h2 className="section-title">Packaging Materials Manufacturer in Bangalore</h2>
             <p className="section-sub">
-              From Fanuc to Mother Dairy, over 2,000 businesses rely on us
-              for consistent quality and on-time delivery.
+              Karna Enterprises supplies EPE Foam, Bubble Wrap, Thermocol, BOPP Tapes, Straps & Corrugated Boxes across Bangalore, Hosur & South India.
+              Built on reliability, trusted by industry leaders from Fanuc to Mother Dairy.
             </p>
           </Reveal>
           <div className="why-grid">
@@ -189,6 +313,13 @@ function Home() {
           </Link>
         </div>
       </section>
+
+      {/* 5 FAQS FOR HOMEPAGE */}
+      <FAQSection
+        title="Frequently Asked Questions"
+        subtitle="Common questions about our packaging manufacturing, custom solutions, and regional supply across Bangalore, Hosur, and South India."
+        faqs={homeFaqs}
+      />
 
       {/* BOTTOM CTA */}
       <Reveal tag="section" className="cta-band">

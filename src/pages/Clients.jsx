@@ -2,6 +2,7 @@ import { MessageCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Reveal from '../components/Reveal'
+import FAQSection from '../components/FAQSection'
 import './Clients.css'
 
 const featuredClients = [
@@ -25,7 +26,7 @@ const featuredClients = [
     description: 'Leading Indian fashion and lifestyle retail brand',
     logo: '/images/clients/sochLogo.jpg',
   },
-    {
+  {
     name: 'Printo Document Services Pvt Ltd',
     description: "India's leading chain of print and design stores",
     logo: '/images/clients/printoLogo.png',
@@ -40,16 +41,116 @@ const allClients = [
   'Transworld International',
 ]
 
+const clientsFaqs = [
+  {
+    question: 'Which industries does Karna Enterprises serve?',
+    answer: 'We serve industries including manufacturing, e-commerce, electronics, FMCG, and logistics across Bangalore, Hosur, and South India.',
+  },
+  {
+    question: 'Does Karna Enterprises supply to businesses outside Bangalore?',
+    answer: 'Yes, we supply packaging materials to clients across Karnataka, Hosur, Tamil Nadu, and other parts of South India.',
+  },
+  {
+    question: 'Can Karna Enterprises handle bulk orders for large clients?',
+    answer: 'Yes, we manufacture and supply packaging materials in bulk quantities to meet the demands of large-scale clients and businesses.',
+  },
+  {
+    question: 'What packaging solutions do you provide for electronics manufacturers?',
+    answer: 'We provide ESD Pink Bubble Pouches, ESD Pouches, and Adhesive Bubble Bags specifically designed for static-sensitive electronic components.',
+  },
+  {
+    question: 'How can my business become a client of Karna Enterprises?',
+    answer: 'You can reach out to our team through our website, phone, or email to discuss your packaging requirements and get started.',
+  },
+]
+
+const clientsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Our Clients | Karna Enterprises",
+      "url": "https://karnaenterprises.in/clients",
+      "description": "Karna Enterprises proudly serves businesses across Bangalore, Hosur & South India with reliable EPE Foam, Thermocol, Tapes & Corrugated Packaging solutions.",
+      "about": {
+        "@type": "Organization",
+        "name": "Karna Enterprises",
+        "url": "https://karnaenterprises.in/",
+        "logo": "https://karnaenterprises.in/images/KElogo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dinnepalya, CK Palya, Electronic City Road",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "postalCode": "560083",
+          "addressCountry": "IN"
+        },
+        "email": "info@karnaenterprises.in",
+        "telephone": "+91 99015 06336",
+        "areaServed": ["Bangalore", "Karnataka", "Hosur", "Tamil Nadu", "South India"]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which industries does Karna Enterprises serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve industries including manufacturing, e-commerce, electronics, FMCG, and logistics across Bangalore, Hosur, and South India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Karna Enterprises supply to businesses outside Bangalore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we supply packaging materials to clients across Karnataka, Hosur, Tamil Nadu, and other parts of South India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Karna Enterprises handle bulk orders for large clients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we manufacture and supply packaging materials in bulk quantities to meet the demands of large-scale clients and businesses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What packaging solutions do you provide for electronics manufacturers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide ESD Pink Bubble Pouches, ESD Pouches, and Adhesive Bubble Bags specifically designed for static-sensitive electronic components."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can my business become a client of Karna Enterprises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can reach out to our team through our website, phone, or email to discuss your packaging requirements and get started."
+          }
+        }
+      ]
+    }
+  ]
+}
+
 function Clients() {
   return (
     <div className="clients-page">
       <Helmet>
-        <title>Our Clients | Karna Enterprises Bangalore</title>
+        <title>Our Clients | Trusted Packaging Supplier in Bangalore & Hosur – Karna Enterprises</title>
         <meta
           name="description"
-          content="Karna Enterprises supplies packaging materials to 2,342+ businesses including Fanuc India, Mother Dairy, Sandvik Asia, Soch Apparels and more."
+          content="Karna Enterprises proudly serves businesses across Bangalore, Hosur & South India with reliable EPE Foam, Thermocol, Tapes & Corrugated Packaging solutions. See our client base."
         />
-        <link rel="canonical" href="https://www.karnaenterprises.in/clients" />
+        <link rel="canonical" href="https://karnaenterprises.in/clients" />
+        <script type="application/ld+json">
+          {JSON.stringify(clientsSchema)}
+        </script>
       </Helmet>
 
       {/* PAGE HEADER */}
@@ -57,7 +158,7 @@ function Clients() {
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">Who trusts us</p>
-            <h1>Our Clients</h1>
+            <h1>Our Clients – Trusted Packaging Partner in Bangalore, Hosur & South India</h1>
             <p className="page-sub">
               From automotive to food and beverage to apparel over 2,300 businesses
               across India trust Karna Enterprises for their packaging needs.
@@ -85,6 +186,30 @@ function Clients() {
           <span className="clients-stat-label">Satisfaction rate</span>
         </div>
       </div>
+
+      {/* H2: BUSINESSES WE SERVE SECTION */}
+      <section className="clients-serve-section">
+        <div className="clients-inner">
+          <Reveal>
+            <p className="section-label">Trusted Partnerships</p>
+            <h2 className="section-title">Businesses We Serve Across Bangalore, Karnataka, Hosur & Tamil Nadu</h2>
+            <div className="clients-serve-content">
+              <p>
+                Karna Enterprises has built long-term relationships with businesses across Bangalore, Karnataka, Hosur, and Tamil Nadu by delivering consistent quality and timely supply of packaging materials. Our client base spans manufacturing units, e-commerce warehouses, electronics companies, and logistics providers across South India.
+              </p>
+              <p>
+                We supply EPE Foam Corner, EPE Foam Fitment, and EPE Boxes to industries requiring cushioning solutions, while our ESD Pink Bubble Pouches and Adhesive Bubble Bags serve electronics and component manufacturers who need static-safe packaging. Our Thermocol Boxes and Thermocol Fitment solutions are trusted by businesses needing insulated and protective packaging.
+              </p>
+              <p>
+                From BOPP Adhesive Tapes and Custom Printed Tapes to PET Strap, PP Strap, and Corrugated Boxes, we support clients across diverse sectors including FMCG, pharmaceuticals, electronics, and general manufacturing in Bangalore and Hosur.
+              </p>
+              <p>
+                Our commitment to reliability and product consistency has made Karna Enterprises a preferred packaging partner for growing businesses across South India. We look forward to serving your packaging needs with the same dedication and quality our existing clients trust us for.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* FEATURED CLIENTS */}
       <section className="featured-section">
@@ -134,6 +259,13 @@ function Clients() {
           </div>
         </div>
       </section>
+
+      {/* 5 FAQS FOR CLIENTS PAGE */}
+      <FAQSection
+        title="Frequently Asked Questions"
+        subtitle="Answers to common questions from prospective and existing clients across South India."
+        faqs={clientsFaqs}
+      />
 
       {/* CTA */}
       <Reveal tag="section" className="clients-cta">

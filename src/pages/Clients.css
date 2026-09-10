@@ -86,7 +86,7 @@
   font-size: 32px;
   font-weight: 700;
   color: #1A1A2E;
-  margin-bottom:2px;
+  margin-bottom: 2px;
   line-height: 1.25;
 }
 
@@ -278,27 +278,65 @@
 
 /* MOBILE */
 @media (max-width: 1024px) {
-  .featured-grid { grid-template-columns: repeat(3, 1fr); }
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-@media (max-width: 900px) {
-  .clients-stats { grid-template-columns: repeat(4, 1fr); }
-  .featured-grid { grid-template-columns: repeat(2, 1fr); }
-  .all-clients-grid { grid-template-columns: repeat(2, 1fr); }
-  .clients-cta-inner { flex-direction: column; align-items: flex-start; }
+@media (
+  /* max-width: 900px; */
+) {
+  .clients-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .all-clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clients-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 600px) {
-  .clients-page .page-header { padding: 56px 24px 64px; }
-  .clients-page .page-header h1 { font-size: 32px; }
-  .clients-inner { padding: 0 24px; }
-  .featured-section,
-  .all-clients-section { padding: 56px 0; }
-  .clients-cta { padding: 48px 24px; }
-  .featured-grid { grid-template-columns: repeat(2, 1fr); }
-  .section-title { font-size: 26px; }
+  .clients-page .page-header {
+    padding: 56px 24px 64px;
+  }
 
-  .clients-stats { grid-template-columns: repeat(4, 1fr); }
+  .clients-page .page-header h1 {
+    font-size: 32px;
+  }
+
+  .clients-inner {
+    padding: 0 24px;
+  }
+
+  .featured-section,
+  .all-clients-section {
+    padding: 56px 0;
+  }
+
+  .clients-cta {
+    padding: 48px 24px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .clients-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   .clients-stat {
     padding: 14px 6px;
@@ -331,4 +369,26 @@
     font-size: 12px;
     white-space: nowrap;
   }
+}
+
+/* BUSINESSES WE SERVE SECTION */
+.clients-serve-section {
+  padding: 72px 0 60px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.clients-serve-content {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* max-width: 900px; */
+  ;
+}
+
+.clients-serve-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4B5563;
 }
