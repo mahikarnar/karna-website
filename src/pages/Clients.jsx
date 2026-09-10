@@ -158,7 +158,7 @@ function Clients() {
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">Who trusts us</p>
-            <h1>Our Clients – Trusted Packaging Partner in Bangalore, Hosur & South India</h1>
+            <h1>Our Clients -<p>Trusted Packaging Partner in Bangalore, Hosur & South India</p> </h1>
             <p className="page-sub">
               From automotive to food and beverage to apparel over 2,300 businesses
               across India trust Karna Enterprises for their packaging needs.

@@ -283,9 +283,7 @@
   }
 }
 
-@media (
-  /* max-width: 900px; */
-) {
+@media (max-width: 900px) {
   .clients-stats {
     grid-template-columns: repeat(4, 1fr);
   }

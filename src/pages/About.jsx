@@ -149,7 +149,7 @@ function About() {
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">Our story</p>
-            <h1>About Karna Enterprises – Packaging Materials Manufacturer in Bangalore</h1>
+            <h1>About Karna Enterprises – <p>Packaging Materials Manufacturer in Bangalore</p></h1>
             <p className="page-sub">
               A Bangalore-based manufacturer and supplier of premium packaging materials,
               serving industries across India since 2010.
@@ -172,7 +172,7 @@ function About() {
                 Our product range includes EPE Foam Corner, EPE Foam Fitment, EPE Boxes, EPE Sheets, and EPE Rolls for cushioning and protection, along with Air Bubble Pouches, ESD Pink Bubble Pouches, and Adhesive Bubble Bags for sensitive and electronic goods. We also manufacture Thermocol Sheets, Thermocol Boxes, and Thermocol Fitment solutions for insulation and structural support.
               </p>
               <p>
-                In addition, we offer a complete range of tapes — including BOPP Adhesive Tapes, Brown Tapes, Masking Tapes, and Custom Printed Tapes — along with PET Strap, PP Strap, Stretch Wrap, and Corrugated Boxes to complete your packaging requirements.
+                In addition, we offer a complete range of tapes including BOPP Adhesive Tapes, Brown Tapes, Masking Tapes, and Custom Printed Tapes — along with PET Strap, PP Strap, Stretch Wrap, and Corrugated Boxes to complete your packaging requirements.
               </p>
               <p>
                 At Karna Enterprises, our commitment to quality, reliability, and timely delivery has made us a preferred packaging partner for businesses across Bangalore, Hosur, and South India.

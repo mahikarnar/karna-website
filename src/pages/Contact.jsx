@@ -223,7 +223,7 @@ function Contact() {
           {/* Left Side */}
           <div className="page-header-content">
             <p className="page-label">Get in touch</p>
-            <h1>Contact Karna Enterprises – Packaging Materials Supplier in Bangalore</h1>
+            <h1>Contact Karna Enterprises <p>Packaging Materials Supplier in Bangalore</p></h1>
             <p className="page-sub">
               Have a packaging requirement? We respond within 24 hours.
               Call, WhatsApp, or fill in the form below.
