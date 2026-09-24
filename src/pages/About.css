@@ -359,9 +359,7 @@
 }
 
 /* MOBILE */
-@media (
-  /* max-width: 900px; */
-) {
+@media (max-width: 900px) {
   .story-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -584,9 +582,7 @@
 }
 
 /* MOBILE ADDITIONS */
-@media (
-  /* max-width: 900px; */
-) {
+@media (max-width: 900px) {
   .vision-grid {
     grid-template-columns: 1fr;
   }

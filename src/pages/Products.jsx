@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet-async'
 const categoryOverviews = [
   {
     title: 'EPE Foam Packaging Products',
-    desc: 'Karna Enterprises manufactures a complete range of EPE Foam products in Bangalore, including EPE Foam Corner, EPE Foam Fitment, EPE Boxes, EPE Sheets, EPE Rolls, and EPE Pouches — ideal for cushioning fragile goods during transit across Karnataka and Hosur.',
+    desc: 'Karna Enterprises manufactures a complete range of EPE Foam products in Bangalore, including EPE Foam Corner, EPE Foam Fitment, EPE Boxes, EPE Sheets, EPE Rolls, and EPE Pouches ideal for cushioning fragile goods during transit across Karnataka and Hosur.',
   },
   {
     title: 'Bubble Wrap & ESD Packaging Products',
@@ -24,7 +24,7 @@ const categoryOverviews = [
   },
   {
     title: 'Straps, Wraps & Films',
-    desc: 'Secure your shipments with PET Strap, PP Strap, Stretch Wrap, and Wrapping Film — trusted by businesses across Bangalore and Hosur.',
+    desc: 'Secure your shipments with PET Strap, PP Strap, Stretch Wrap, and Wrapping Film trusted by businesses across Bangalore and Hosur.',
   },
   {
     title: 'Corrugated & Other Packaging Products',
@@ -338,7 +338,7 @@ function Products() {
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">What we make</p>
-            <h1>Packaging Products Manufactured in Bangalore, Karnataka</h1>
+            <h1>Packaging Products -<p>Manufactured in Bangalore, Karnataka</p></h1>
             <p className="page-sub">
               A complete range of inner and outer packaging solutions from protective foam
               fitments to branded tapes, all manufactured and supplied from Bangalore.
