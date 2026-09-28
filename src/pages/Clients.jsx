@@ -170,11 +170,11 @@ function Clients() {
       {/* STATS STRIP */}
       <div className="clients-stats">
         <div className="clients-stat">
-          <span className="clients-stat-num">2,342+</span>
+          <span className="clients-stat-num">200+</span>
           <span className="clients-stat-label">Clients served</span>
         </div>
         <div className="clients-stat">
-          <span className="clients-stat-num">6,302+</span>
+          <span className="clients-stat-num">8,500+</span>
           <span className="clients-stat-label">Orders completed</span>
         </div>
         <div className="clients-stat">

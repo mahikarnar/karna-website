@@ -7,10 +7,10 @@ import './About.css'
 
 const milestones = [
   { year: '2010', title: 'Founded', desc: 'Karna Enterprises was incorporated in Bangalore with the objective of providing best-quality packaging materials to local industries.' },
-  { year: '2012', title: 'First 100 Clients', desc: 'Within two years, we built a loyal base of 100+ clients across manufacturing and food processing sectors.' },
+  { year: '2012', title: 'First 50 Clients', desc: 'Within two years, we built a loyal base of 50+ clients across manufacturing and food processing sectors.' },
   { year: '2015', title: 'Expanded Product Range', desc: 'Added EPE foam fitments, corrugated boxes, and custom printed tapes to serve a wider range of industries.' },
-  { year: '2018', title: 'Crossed 1,000 Orders', desc: 'A major milestone over 1,000 completed orders with zero compromise on quality or delivery timelines.' },
-  { year: '2024', title: 'Today', desc: '2,342+ clients, 6,302+ orders completed, and still growing. Trusted by brands like Fanuc, Mother Dairy, and Sandvik Asia.' },
+  { year: '2018', title: 'Crossed 5,000 Orders', desc: 'A major milestone over 5,000 completed orders with zero compromise on quality or delivery timelines.' },
+  { year: '2026', title: 'Today', desc: '200+ clients, 8,500+ orders completed, and still growing. Trusted by brands like Fanuc, Mother Dairy, and Sandvik Asia.' },
 ]
 
 const aboutFaqs = [
@@ -207,11 +207,11 @@ function About() {
               </p>
               <div className="story-stats">
                 <div className="story-stat">
-                  <span className="story-stat-num">2,342+</span>
+                  <span className="story-stat-num">200+</span>
                   <span className="story-stat-label">Clients served</span>
                 </div>
                 <div className="story-stat">
-                  <span className="story-stat-num">6,302+</span>
+                  <span className="story-stat-num">8,500+</span>
                   <span className="story-stat-label">Orders completed</span>
                 </div>
                 <div className="story-stat">
