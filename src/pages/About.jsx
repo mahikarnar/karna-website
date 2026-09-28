@@ -149,7 +149,7 @@ function About() {
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">Our story</p>
-            <h1>About Karna Enterprises – <p>Packaging Materials Manufacturer in Bangalore</p></h1>
+<h1>About Karna Enterprises – <p>Packaging Materials Manufacturer in Bangalore</p></h1>
             <p className="page-sub">
               A Bangalore-based manufacturer and supplier of premium packaging materials,
               serving industries across India since 2010.
