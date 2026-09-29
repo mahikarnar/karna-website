@@ -71,6 +71,7 @@ function Footer() {
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/clients">Clients</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/sitemap">Sitemap</Link></li>
           </ul>
         </div>
 
@@ -116,7 +117,7 @@ function Footer() {
       <div className="footer-bottom">
         <div className="footer-bottom-left">
           <p>© {new Date().getFullYear()} Karna Enterprises.</p>
-          <p>All rights reserved.</p>
+          <p>All rights reserved. | <Link to="/sitemap" style={{ color: '#9CA3AF', textDecoration: 'none' }}>HTML Sitemap</Link></p>
         </div>
         <div className="footer-bottom-right">
           <p>Bangalore, Karnataka,</p>
