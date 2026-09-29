@@ -338,7 +338,7 @@ function Products() {
         <div className="page-header-inner">
           <Reveal>
             <p className="page-label">What we make</p>
-            <h1>Packaging Products -<p>Manufactured in Bangalore, Karnataka</p></h1>
+<h1>Packaging Products - <p>Manufactured in Bangalore, Karnataka</p></h1>
             <p className="page-sub">
               A complete range of inner and outer packaging solutions from protective foam
               fitments to branded tapes, all manufactured and supplied from Bangalore.

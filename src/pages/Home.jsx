@@ -209,11 +209,11 @@ function Home() {
       {/* STATS */}
       <section className="stats-bar">
         <div className="stat-item">
-          <span className="stat-num">2,342+</span>
+          <span className="stat-num">200+</span>
           <span className="stat-label">Happy Clients</span>
         </div>
         <div className="stat-item">
-          <span className="stat-num">6,302+</span>
+          <span className="stat-num">8,500+</span>
           <span className="stat-label">Orders Completed</span>
         </div>
         <div className="stat-item">
